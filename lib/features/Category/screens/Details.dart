@@ -20,14 +20,7 @@ class _DetailsState extends State<Details> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(Icons.chevron_left, color: Colors.black),
-          onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => ScreenUp(),
-            //   ),
-            // );
-          },
+          onPressed: () {},
         ),
         title: Text(
           'Detail P1',
@@ -39,9 +32,7 @@ class _DetailsState extends State<Details> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share_rounded, color: Colors.black),
-            onPressed: () {
-              // Ajoutez ici la logique pour gérer la recherche
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -60,7 +51,7 @@ class _DetailsState extends State<Details> {
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/image5.jpg',
-                      width: 250, // Diminuer la largeur de l'image 5
+                      width: 250,
                       height: 200,
                       fit: BoxFit.cover,
                     ),
@@ -204,9 +195,7 @@ class _DetailsState extends State<Details> {
                   const SizedBox(width: 5.0),
                   IconButton(
                     icon: Icon(Icons.chevron_right, color: Colors.black),
-                    onPressed: () {
-                      // Ajoutez ici la logique pour gérer l'action associée à l'icône more
-                    },
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -228,9 +217,7 @@ class _DetailsState extends State<Details> {
                   SizedBox(width: 5.0),
                   IconButton(
                     icon: Icon(Icons.chevron_right, color: Colors.black),
-                    onPressed: () {
-                      // Ajoutez ici la logique pour gérer l'action associée à l'icône more
-                    },
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -271,9 +258,7 @@ class _DetailsState extends State<Details> {
                   rating: 4.9,
                   numReviews: 256,
                   showFavorite: false,
-                  // cardColor: Colors.white,
                 ),
-                // SizedBox.expand(
                 CustomWidget(
                   imagePath: 'assets/images/image2.jpg',
                   title: 'Lorem',
@@ -282,9 +267,6 @@ class _DetailsState extends State<Details> {
                   rating: 4.8,
                   numReviews: 128,
                   showFavorite: false,
-
-                  // cardColor: Colors.white,
-                  // ),
                 ),
               ],
             ),

@@ -32,9 +32,7 @@ class _produitState extends State<produit> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                        // Logique du bouton de recherche
-                      },
+                      onPressed: () {},
                       icon: Icon(Icons.search),
                       label: Text('Search Candles'),
                       style: ElevatedButton.styleFrom(
@@ -131,9 +129,7 @@ class _produitState extends State<produit> {
                   child: Icon(Icons.menu),
                 ),
                 IconButton(
-                  onPressed: () {
-                    // Logique de l'icône de notification
-                  },
+                  onPressed: () {},
                   icon: Icon(Icons.notifications),
                 ),
               ],
@@ -154,14 +150,12 @@ class _produitState extends State<produit> {
                         rating: 4.9,
                         numReviews: 256,
                         showFavorite: false,
-                        // cardColor: Colors.white,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 4.0), // Ajuster la marge gauche
+                      padding: const EdgeInsets.only(left: 4.0),
                       child: CustomWidget(
                         imagePath: 'assets/images/image1.png',
                         title: 'Lorem',

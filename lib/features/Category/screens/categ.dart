@@ -12,7 +12,7 @@ class Categ extends StatefulWidget {
 }
 
 class _CategState extends State<Categ> {
-  int _currentImageIndex = 0; // Indice de l'image actuellement affichée
+  int _currentImageIndex = 0;
 
   List<String> appBarImages = [
     'assets/images/image9.jpg',
@@ -21,9 +21,9 @@ class _CategState extends State<Categ> {
   ];
 
   List<Color> _circleColors = [
-    Colors.blue, // Couleur du cercle pour image9
-    Colors.grey, // Couleur du cercle pour image11
-    Colors.grey, // Couleur du cercle pour image12
+    Colors.blue,
+    Colors.grey,
+    Colors.grey,
   ];
 
   @override
@@ -55,10 +55,8 @@ class _CategState extends State<Categ> {
           onHorizontalDragEnd: (details) {
             if (details.primaryVelocity! < 0) {
               setState(() {
-                // Changement de l'image dans l'appBar lorsque vous faites glisser vers la droite
-                _currentImageIndex =
-                    (_currentImageIndex + 1) % appBarImages.length;
-                // Mettre à jour la couleur du cercle correspondant
+                (_currentImageIndex + 1) % appBarImages.length;
+
                 _updateCircleColors();
               });
             }
@@ -113,17 +111,17 @@ class _CategState extends State<Categ> {
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: _circleColors[0], // Couleur du cercle pour image9
+                    color: _circleColors[0],
                   ),
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: _circleColors[1], // Couleur du cercle pour image11
+                    color: _circleColors[1],
                   ),
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: _circleColors[2], // Couleur du cercle pour image12
+                    color: _circleColors[2],
                   ),
                 ],
               ),
@@ -302,7 +300,6 @@ class _CategState extends State<Categ> {
     );
   }
 
-  // Met à jour la couleur des cercles en fonction de l'image actuellement affichée dans l'appBar
   void _updateCircleColors() {
     setState(() {
       for (int i = 0; i < _circleColors.length; i++) {

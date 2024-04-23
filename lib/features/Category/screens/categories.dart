@@ -31,7 +31,6 @@ class _CategoriesState extends State<Categories> {
             color: Colors.black,
           ),
         ),
-        // Définir un widget vide comme leading pour supprimer l'icône de retour en arrière
         leading: Container(),
       ),
       body: SingleChildScrollView(
@@ -62,12 +61,10 @@ class _CategoriesState extends State<Categories> {
             SizedBox(
               height: 20.0,
             ),
-            // Utilisation de ListView.builder pour afficher les catégories
             ListView.builder(
               shrinkWrap: true,
-              physics:
-                  NeverScrollableScrollPhysics(), // Empêcher le défilement du ListView
-              itemCount: 6, // Nombre total de catégories
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 6,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -101,7 +98,7 @@ class _CategoriesState extends State<Categories> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 5.0, // Espacement entre les textes
+                                  height: 5.0,
                                 ),
                                 Text(
                                   '100 product',
@@ -114,13 +111,12 @@ class _CategoriesState extends State<Categories> {
                             ),
                           ),
                           SizedBox(
-                            width:
-                                140.0, // Espacement entre le texte et l'image
+                            width: 140.0,
                           ),
                           Image.asset(
-                            'assets/images/image3.png', // Chemin de l'image
-                            width: 100, // Largeur de l'image
-                            height: 100, // Hauteur de l'image
+                            'assets/images/image3.png',
+                            width: 100,
+                            height: 100,
                           ),
                         ],
                       ),

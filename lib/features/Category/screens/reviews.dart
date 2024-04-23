@@ -39,25 +39,21 @@ class _reviewsState extends State<reviews> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Photo à gauche
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/images/image7.png'),
-                      radius: 15, // Taille du cercle
+                      radius: 15,
                     ),
                     SizedBox(width: 10),
-                    // Titre et icônes
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Titre
                           Text(
                             'Courtney Henry',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          // Icônes
                           Row(
                             children: [
                               Icon(
@@ -81,7 +77,7 @@ class _reviewsState extends State<reviews> {
                                 color: Colors.yellow.shade100,
                               ),
                               Text('2 mins ago'),
-                              Spacer(), // Pour pousser les icônes vers la droite
+                              Spacer(),
                               Icon(Icons.more_vert),
                             ],
                           ),
@@ -90,7 +86,6 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                // Texte en dessous de la photo
                 SizedBox(height: 1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
@@ -124,25 +119,21 @@ class _reviewsState extends State<reviews> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Photo à gauche
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/images/image7.png'),
-                      radius: 15, // Taille du cercle
+                      radius: 15,
                     ),
                     SizedBox(width: 10),
-                    // Titre et icônes
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Titre
                           Text(
                             'Courtney Henry',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          // Icônes
                           Row(
                             children: [
                               Icon(
@@ -166,7 +157,7 @@ class _reviewsState extends State<reviews> {
                                 color: Colors.yellow.shade100,
                               ),
                               Text('2 mins ago'),
-                              Spacer(), // Pour pousser les icônes vers la droite
+                              Spacer(),
                               Icon(
                                 Icons.more_vert,
                               ),
@@ -177,7 +168,6 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                // Texte en dessous de la photo
                 SizedBox(height: 1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
@@ -211,25 +201,21 @@ class _reviewsState extends State<reviews> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Photo à gauche
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/images/image7.png'),
-                      radius: 15, // Taille du cercle
+                      radius: 15,
                     ),
                     SizedBox(width: 10),
-                    // Titre et icônes
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Titre
                           Text(
                             'Courtney Henry',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          // Icônes
                           Row(
                             children: [
                               Icon(
@@ -253,7 +239,7 @@ class _reviewsState extends State<reviews> {
                                 color: Colors.yellow.shade100,
                               ),
                               Text('2 mins ago'),
-                              Spacer(), // Pour pousser les icônes vers la droite
+                              Spacer(),
                               Icon(
                                 Icons.more_vert,
                               ),
@@ -264,7 +250,6 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                // Texte en dessous de la photo
                 SizedBox(height: 1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
@@ -298,25 +283,21 @@ class _reviewsState extends State<reviews> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Photo à gauche
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/images/image7.png'),
-                      radius: 15, // Taille du cercle
+                      radius: 15,
                     ),
                     SizedBox(width: 10),
-                    // Titre et icônes
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Titre
                           Text(
                             'Courtney Henry',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          // Icônes
                           Row(
                             children: [
                               Icon(
@@ -340,7 +321,7 @@ class _reviewsState extends State<reviews> {
                                 color: Colors.yellow.shade100,
                               ),
                               Text('2 mins ago'),
-                              Spacer(), // Pour pousser les icônes vers la droite
+                              Spacer(),
                               Icon(
                                 Icons.more_vert,
                               ),
@@ -351,7 +332,6 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                // Texte en dessous de la photo
                 SizedBox(height: 1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
