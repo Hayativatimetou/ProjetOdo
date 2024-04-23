@@ -38,7 +38,7 @@ class custAppbar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 )
               : SizedBox(),
-          Spacer(), // Ajout du Spacer pour pousser les icônes de droite au bord droit
+          Spacer(),
           IconButton(
             onPressed: searchCallback,
             icon: Icon(Icons.search, color: Colors.black),

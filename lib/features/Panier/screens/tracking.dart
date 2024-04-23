@@ -293,16 +293,15 @@ class _TrackingState extends State<Tracking> {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Container(
-                                    width:
-                                        150, // Modification de la largeur à 120
+                                    width: 150,
                                     margin: EdgeInsets.all(16.0),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(30),
                                       color: Colors.blue,
                                     ),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .center, // Centrer le texte
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         ElevatedButton(
                                           onPressed: () {
@@ -414,9 +413,7 @@ class _TrackingState extends State<Tracking> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
-                                            width:
-                                                5), // Espacement de 10 pixels
+                                        SizedBox(width: 5),
                                         Text(
                                           'Message',
                                           style: TextStyle(

@@ -4,8 +4,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final double width;
   final VoidCallback onPressed;
-  final Color color; // Changement du type de données
-
+  final Color color;
   const CustomButton({
     required this.text,
     required this.onPressed,
@@ -18,10 +17,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: width, // Utilisation de la largeur spécifiée
+        width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: color, // Utilisation de la couleur spécifiée
+          color: color,
         ),
         child: ElevatedButton(
           onPressed: onPressed,
@@ -33,8 +32,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-                color), // Utilisation de la couleur spécifiée
+            backgroundColor: MaterialStateProperty.all<Color>(color),
             elevation: MaterialStateProperty.all<double>(0),
             shape: MaterialStateProperty.all<OutlinedBorder>(
               RoundedRectangleBorder(

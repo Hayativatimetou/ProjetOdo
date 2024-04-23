@@ -45,8 +45,6 @@ class _panierState extends State<panier> {
             padding: const EdgeInsets.all(8.0),
             child: Card(
               elevation: 3.0,
-              // child: Padding(
-              //  padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Image.asset(
@@ -87,10 +85,7 @@ class _panierState extends State<panier> {
                               },
                               onSelected: (value) {
                                 if (value == "favorite") {
-                                  // Ajouter au favoris
-                                } else if (value == "remove") {
-                                  // Supprimer de la liste
-                                }
+                                } else if (value == "remove") {}
                               },
                               icon: Icon(Icons.more_vert, color: Colors.grey),
                             ),
@@ -110,19 +105,18 @@ class _panierState extends State<panier> {
                               width: 65.0,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '-', // Texte à afficher
+                                  '-',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -141,19 +135,18 @@ class _panierState extends State<panier> {
                               width: 10,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '+', // Texte à afficher
+                                  '+',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -162,13 +155,12 @@ class _panierState extends State<panier> {
                         )
                       ],
                     ),
-                    // Ajout d'un espaceur pour pousser l'image à droite
                   ),
                 ],
               ),
             ),
           ),
-          //),
+
           SizedBox(
             height: 5,
           ),
@@ -176,8 +168,6 @@ class _panierState extends State<panier> {
             padding: const EdgeInsets.all(8.0),
             child: Card(
               elevation: 3.0,
-              // child: Padding(
-              //  padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Image.asset(
@@ -218,10 +208,7 @@ class _panierState extends State<panier> {
                               },
                               onSelected: (value) {
                                 if (value == "favorite") {
-                                  // Ajouter au favoris
-                                } else if (value == "remove") {
-                                  // Supprimer de la liste
-                                }
+                                } else if (value == "remove") {}
                               },
                               icon: Icon(Icons.more_vert, color: Colors.grey),
                             ),
@@ -241,19 +228,18 @@ class _panierState extends State<panier> {
                               width: 65.0,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '-', // Texte à afficher
+                                  '-',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -272,19 +258,18 @@ class _panierState extends State<panier> {
                               width: 10,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '+', // Texte à afficher
+                                  '+',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -293,24 +278,20 @@ class _panierState extends State<panier> {
                         )
                       ],
                     ),
-                    // Ajout d'un espaceur pour pousser l'image à droite
                   ),
                 ],
               ),
             ),
           ),
-          //),
+
           SizedBox(
             height: 5,
           ),
-          // ),
 
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
               elevation: 3.0,
-              // child: Padding(
-              //  padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Image.asset(
@@ -351,10 +332,7 @@ class _panierState extends State<panier> {
                               },
                               onSelected: (value) {
                                 if (value == "favorite") {
-                                  // Ajouter au favoris
-                                } else if (value == "remove") {
-                                  // Supprimer de la liste
-                                }
+                                } else if (value == "remove") {}
                               },
                               icon: Icon(Icons.more_vert, color: Colors.grey),
                             ),
@@ -374,19 +352,18 @@ class _panierState extends State<panier> {
                               width: 65.0,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '-', // Texte à afficher
+                                  '-',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -405,19 +382,18 @@ class _panierState extends State<panier> {
                               width: 10,
                             ),
                             Container(
-                              width: 30, // Taille du cercle
-                              height: 30, // Taille du cercle
+                              width: 30,
+                              height: 30,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    Colors.grey.shade100, // Couleur du cercle
+                                color: Colors.grey.shade100,
                               ),
                               child: Center(
                                 child: Text(
-                                  '+', // Texte à afficher
+                                  '+',
                                   style: TextStyle(
-                                    fontSize: 24, // Taille de la police
-                                    color: Colors.grey, // Couleur du texte
+                                    fontSize: 24,
+                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -426,7 +402,6 @@ class _panierState extends State<panier> {
                         )
                       ],
                     ),
-                    // Ajout d'un espaceur pour pousser l'image à droite
                   ),
                 ],
               ),
@@ -445,7 +420,7 @@ class _panierState extends State<panier> {
                 title: Row(
                   children: [
                     Expanded(
-                      child: Text('Entrer votre code promo'), // Texte
+                      child: Text('Entrer votre code promo'),
                     ),
                   ],
                 ),
@@ -454,7 +429,7 @@ class _panierState extends State<panier> {
                   child: Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
-                  ), // Icône de flèche de gauche à droite
+                  ),
                 ),
               ),
             ),
@@ -493,7 +468,6 @@ class _panierState extends State<panier> {
           CustomButton(
             text: 'Acceder au paiement ',
             color: Colors.blue,
-            //width: 200, // Largeur personnalisée de 200
             onPressed: () {
               Navigator.push(
                 context,
@@ -504,7 +478,7 @@ class _panierState extends State<panier> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Pour afficher tous les 5 icônes
+        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
