@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.startup">
+  
    <application
         android:label="startup"
         android:name="${applicationName}"
@@ -32,6 +33,7 @@
             android:value="2" />
              <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDUHvSMQ8aqhR1O_foIhnc8fPrHrjHlR1I" />
+            android:value="AIzaSyALPy1wvHVbaVWcU3qUkDmx4BAMG8VOyNI" />
+             
     </application>
 </manifest>

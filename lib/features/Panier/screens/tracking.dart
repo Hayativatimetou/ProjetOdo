@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:startup/features/Panier/screens/Reviews.dart';
+import 'package:startup/features/Panier/widgets/CustomButton.dart';
 
 class Tracking extends StatefulWidget {
   const Tracking({Key? key}) : super(key: key);
@@ -32,13 +34,12 @@ class _TrackingState extends State<Tracking> {
       context: context,
       builder: (BuildContext context) {
         return SizedBox(
-          height: 600,
+          height: 1000,
           child: Container(
             padding: EdgeInsets.all(2.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // SizedBox(height: 5.0),
                 Center(
                   child: Container(
                     width: 100,
@@ -47,138 +48,394 @@ class _TrackingState extends State<Tracking> {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.centerLeft, // Aligner le bouton à gauche
+                  alignment: Alignment.centerLeft,
                   child: Container(
-                    width: 150, // Largeur souhaitée du bouton
-                    margin: EdgeInsets.all(
-                        16.0), // Ajouter une marge autour du bouton
+                    width: 150,
+                    margin: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(30), // Arrondir les coins
-                      color: Colors.blue, // Définir la couleur spécifique
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.blue,
                     ),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        '#33-A45E',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors
-                            .transparent), // Définir la couleur de fond du bouton comme transparente
-                        elevation: MaterialStateProperty.all<double>(
-                            0), // Supprimer l'ombre du bouton
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                20), // Définir le rayon de la bordure
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            '#33-A45E',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.transparent),
+                            elevation: MaterialStateProperty.all<double>(0),
+                            shape: MaterialStateProperty.all<OutlinedBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                 ),
                 SizedBox(
                   height: 10,
                 ),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Temps restant'),
-                        SizedBox(
-                            width:
-                                5), // Espacement entre le texte et la barre verticale
-                        Container(
-                          width: 2,
-                          height: 14, // Hauteur de la barre verticale
-                          color: Colors.grey,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'temps restant',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Container(
+                                  height: 30,
+                                  width: 4,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  width: 100,
+                                ),
+                                Text(
+                                  'temps estime',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Text(
+                                  '2 mins',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 170,
+                                ),
+                                Text(
+                                  '35 mins',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
                         ),
-                        SizedBox(
-                            width:
-                                5), // Espacement entre la barre verticale et le texte suivant
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('2 mins', textAlign: TextAlign.right),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                        height:
-                            5), // Espacement entre les deux ensembles de texte
-                    SizedBox(
-                        height:
-                            10), // Hauteur entre le premier ensemble de texte et le deuxième
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Temps restant'),
-                        SizedBox(width: 5),
-                        Container(
-                          width: 2,
-                          height: 14, // Hauteur de la barre verticale
-                          color: Colors.grey,
-                        ),
-                        SizedBox(
-                            width:
-                                5), // Espacement entre la barre verticale et le texte suivant
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('2 mins', textAlign: TextAlign.left),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 16.0),
-                Center(
-                  child: Text(
-                    "Trier par",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 16.0),
-                Text('Apple Populaire', style: TextStyle(fontSize: 16.0)),
-                SizedBox(height: 8.0),
-                Text('Plus Récent', style: TextStyle(fontSize: 16.0)),
-                SizedBox(height: 8.0),
-                Text('Avis des Clients', style: TextStyle(fontSize: 16.0)),
-                SizedBox(height: 8.0),
-                GestureDetector(
-                  onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => Details(),
-                    //   ),
-                    // );
-                  },
-                  child: Container(
-                    color: Colors.blue,
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Prix: du plus bas au plus élevé',
-                      style: TextStyle(fontSize: 16.0, color: Colors.white),
-                    ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: 2,
+                                  width: 300,
+                                  color: Colors.grey,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 8.0),
-                Text('Prix: du plus élevé au plus bas',
-                    style: TextStyle(fontSize: 16.0)),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'From',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 150,
+                                ),
+                                Text(
+                                  'To',
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.grey),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              children: [
+                                Text(
+                                  'Placio restaurant',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 50,
+                                ),
+                                Text(
+                                  '123 rue mokthar ',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'dadah,Tvz',
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.black),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 50),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 5),
+                            Text(
+                              'Driver details',
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/tst3.png',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Sidi Doe'),
+                                    SizedBox(height: 5),
+                                    Text('ID: 101D12345'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Container(
+                                    width:
+                                        150, // Modification de la largeur à 120
+                                    margin: EdgeInsets.all(16.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.blue,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .center, // Centrer le texte
+                                      children: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            showModalBottomSheet(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return Container(
+                                                  padding: EdgeInsets.all(20.0),
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Container(
+                                                        child: Center(
+                                                          child: Container(
+                                                            width: 100,
+                                                            height: 4,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
+                                                        margin: EdgeInsets.only(
+                                                            bottom: 16.0),
+                                                      ),
+                                                      Center(
+                                                        child: Image.asset(
+                                                          'assets/images/image10.png',
+                                                          width: 200,
+                                                          height: 200,
+                                                        ),
+                                                      ),
+                                                      Center(
+                                                        child: Text(
+                                                          "Commande est confirmée ",
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 20,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 5.0),
+                                                      Center(
+                                                        child: Text(
+                                                          "Votre commande est confirmée, nous espérons être livrés à temps et bon appétit.",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.grey,
+                                                              fontSize: 16),
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 5),
+                                                      CustomButton(
+                                                        text: 'Evaluations',
+                                                        color: Colors.blue,
+                                                        onPressed: () {
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        reviews()),
+                                                          );
+                                                        },
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      CustomButton(
+                                                        text: 'Plus Tard',
+                                                        color: Colors.grey,
+                                                        onPressed: () {},
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.phone,
+                                                  color: Colors.white),
+                                              SizedBox(width: 5),
+                                              Text(
+                                                'Appeler',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty.all<
+                                                    Color>(Colors.transparent),
+                                            elevation: MaterialStateProperty
+                                                .all<double>(0),
+                                            shape: MaterialStateProperty.all<
+                                                OutlinedBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                            width:
+                                                5), // Espacement de 10 pixels
+                                        Text(
+                                          'Message',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -189,7 +446,6 @@ class _TrackingState extends State<Tracking> {
 
   @override
   Widget build(BuildContext context) {
-    // Coordonnées de Nouakchott
     LatLng nouakchottPosition = LatLng(18.0735, -15.9582);
 
     return Scaffold(
@@ -262,8 +518,8 @@ class _TrackingState extends State<Tracking> {
                 _showModalBottomSheet(context);
               },
               child: Container(
-                height: 50, // Ajustez la hauteur selon votre besoin
-                color: Colors.transparent, // Pour définir une zone cliquable
+                height: 50,
+                color: Colors.transparent,
               ),
             ),
           ),

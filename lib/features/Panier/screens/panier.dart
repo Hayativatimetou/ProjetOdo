@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startup/features/Panier/screens/Pan.dart';
-import 'package:startup/features/authanticattion/widgets/CustomButton.dart';
+import 'package:startup/features/Panier/widgets/CustomButton.dart';
 
 class panier extends StatefulWidget {
   const panier({Key? key}) : super(key: key);
@@ -96,7 +96,7 @@ class _panierState extends State<panier> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 40),
+                        SizedBox(height: 30),
                         Row(
                           children: [
                             Text(
@@ -227,7 +227,7 @@ class _panierState extends State<panier> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 40),
+                        SizedBox(height: 30),
                         Row(
                           children: [
                             Text(
@@ -304,9 +304,7 @@ class _panierState extends State<panier> {
             height: 5,
           ),
           // ),
-          SizedBox(
-            height: 5,
-          ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -362,7 +360,7 @@ class _panierState extends State<panier> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 40),
+                        SizedBox(height: 30),
                         Row(
                           children: [
                             Text(
@@ -439,42 +437,29 @@ class _panierState extends State<panier> {
             height: 5,
           ),
 
-          Container(
-            width: 360,
-            height: 50,
-            padding: EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            child: Stack(
-              children: [
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Entrez votre texte ici',
-                    border: InputBorder.none,
-                  ),
-                ),
-                Positioned(
-                  right: 8.0,
-                  child: Container(
-                    width: 40.0,
-                    height: 40.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.black,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              elevation: 1.0,
+              child: ListTile(
+                title: Row(
+                  children: [
+                    Expanded(
+                      child: Text('Entrer votre code promo'), // Texte
                     ),
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () {
-                        // Action à exécuter lors du clic sur la flèche
-                      },
-                    ),
-                  ),
+                  ],
                 ),
-              ],
+                trailing: CircleAvatar(
+                  backgroundColor: Colors.black,
+                  child: Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                  ), // Icône de flèche de gauche à droite
+                ),
+              ),
             ),
           ),
+
           SizedBox(
             height: 2,
           ),
@@ -507,6 +492,7 @@ class _panierState extends State<panier> {
           ),
           CustomButton(
             text: 'Acceder au paiement ',
+            color: Colors.blue,
             //width: 200, // Largeur personnalisée de 200
             onPressed: () {
               Navigator.push(

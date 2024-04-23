@@ -226,6 +226,7 @@ class _panState extends State<pan> {
           ),
           CustomButton(
             text: 'SOUMETTRE LA COMMANDE',
+            color: Colors.blue,
             onPressed: () {
               showModalBottomSheet(
                 context: context,
@@ -275,6 +276,7 @@ class _panState extends State<pan> {
                         ),
                         CustomButton(
                           text: 'Afficher le Tracker ',
+                          color: Colors.blue,
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -283,12 +285,38 @@ class _panState extends State<pan> {
                             );
                           },
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          child: Center(
+                            child: Container(
+                              width: 200,
+                              height: 4,
+                              color: Colors.black,
+                            ),
+                          ),
+                          margin: EdgeInsets.only(bottom: 16.0),
+                        ),
                       ],
                     ),
                   );
                 },
               );
             },
+          ),
+          SizedBox(
+            height: 215,
+          ),
+          Container(
+            child: Center(
+              child: Container(
+                width: 200,
+                height: 4,
+                color: Colors.black,
+              ),
+            ),
+            margin: EdgeInsets.only(bottom: 16.0),
           ),
         ],
       ),

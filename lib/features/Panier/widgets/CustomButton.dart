@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final double width; // Ajout du paramètre width
+  final double width;
   final VoidCallback onPressed;
+  final Color color; // Changement du type de données
 
   const CustomButton({
     required this.text,
     required this.onPressed,
-    this.width = double.infinity, // Par défaut, la largeur est égale à l'infini
+    this.width = double.infinity,
+    required this.color,
     Key? key,
   }) : super(key: key);
 
@@ -16,10 +18,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 500, // Utilisation de la largeur spécifiée
+        width: width, // Utilisation de la largeur spécifiée
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.blue,
+          color: color, // Utilisation de la couleur spécifiée
         ),
         child: ElevatedButton(
           onPressed: onPressed,
@@ -31,7 +33,8 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+            backgroundColor: MaterialStateProperty.all<Color>(
+                color), // Utilisation de la couleur spécifiée
             elevation: MaterialStateProperty.all<double>(0),
             shape: MaterialStateProperty.all<OutlinedBorder>(
               RoundedRectangleBorder(

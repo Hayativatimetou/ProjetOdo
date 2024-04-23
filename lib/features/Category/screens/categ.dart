@@ -12,6 +12,20 @@ class Categ extends StatefulWidget {
 }
 
 class _CategState extends State<Categ> {
+  int _currentImageIndex = 0; // Indice de l'image actuellement affichée
+
+  List<String> appBarImages = [
+    'assets/images/image9.jpg',
+    'assets/images/image11.jpg',
+    'assets/images/image12.jpg',
+  ];
+
+  List<Color> _circleColors = [
+    Colors.blue, // Couleur du cercle pour image9
+    Colors.grey, // Couleur du cercle pour image11
+    Colors.grey, // Couleur du cercle pour image12
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,27 +33,42 @@ class _CategState extends State<Categ> {
       extendBody: true,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10),
-            Text('Lorem Ipsum',
-                style: TextStyle(color: Colors.white, fontSize: 20.0)),
-            Text('Get discounts up to 75%  ',
-                style: TextStyle(color: Colors.white, fontSize: 14.0)),
-            Text('for', style: TextStyle(color: Colors.white, fontSize: 14.0)),
+            Text(
+              'Lorem Ipsum',
+              style: TextStyle(color: Colors.white, fontSize: 20.0),
+            ),
+            Text(
+              'Get discounts up to 75%  ',
+              style: TextStyle(color: Colors.white, fontSize: 14.0),
+            ),
+            Text(
+              'for',
+              style: TextStyle(color: Colors.white, fontSize: 14.0),
+            ),
           ],
         ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 174, 127, 159),
-                Color.fromARGB(255, 184, 102, 48),
-                Color.fromARGB(255, 97, 153, 114)
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
+        flexibleSpace: GestureDetector(
+          onHorizontalDragEnd: (details) {
+            if (details.primaryVelocity! < 0) {
+              setState(() {
+                // Changement de l'image dans l'appBar lorsque vous faites glisser vers la droite
+                _currentImageIndex =
+                    (_currentImageIndex + 1) % appBarImages.length;
+                // Mettre à jour la couleur du cercle correspondant
+                _updateCircleColors();
+              });
+            }
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(appBarImages[_currentImageIndex]),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -77,30 +106,30 @@ class _CategState extends State<Categ> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Center(
+            Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: Colors.blue,
+                    color: _circleColors[0], // Couleur du cercle pour image9
                   ),
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: Colors.grey,
+                    color: _circleColors[1], // Couleur du cercle pour image11
                   ),
                   Icon(
                     Icons.circle,
                     size: 10,
-                    color: Colors.grey,
+                    color: _circleColors[2], // Couleur du cercle pour image12
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 10),
-            const Row(
+            SizedBox(height: 10),
+            Row(
               children: [
                 Text(
                   'Soldes',
@@ -120,7 +149,6 @@ class _CategState extends State<Categ> {
             SizedBox(height: 10),
             Container(
               height: 300,
-              // color: Colors.white,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
@@ -156,7 +184,6 @@ class _CategState extends State<Categ> {
                   return SizedBox(
                     width: 155,
                     child: CustomWidget(
-                      // Utilisation de CustomWidgetForCateg
                       imagePath: imagePath,
                       title: title,
                       currentPrice: currentPrice,
@@ -169,8 +196,8 @@ class _CategState extends State<Categ> {
                 },
               ),
             ),
-            const SizedBox(height: 10),
-            const Row(
+            SizedBox(height: 10),
+            Row(
               children: [
                 Text(
                   'Nouveau',
@@ -187,10 +214,10 @@ class _CategState extends State<Categ> {
                 ),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 10.0,
             ),
-            const Text(
+            Text(
               'Tu ne las jamais vu auparavanr !',
               style: TextStyle(fontSize: 12.0, color: Colors.grey),
             ),
@@ -273,5 +300,14 @@ class _CategState extends State<Categ> {
         },
       ),
     );
+  }
+
+  // Met à jour la couleur des cercles en fonction de l'image actuellement affichée dans l'appBar
+  void _updateCircleColors() {
+    setState(() {
+      for (int i = 0; i < _circleColors.length; i++) {
+        _circleColors[i] = i == _currentImageIndex ? Colors.blue : Colors.grey;
+      }
+    });
   }
 }
