@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:startup/features/Category/screens/produit.dart';
 import 'package:startup/features/Category/widgets/CustomBottomNavigationBar.dart';
+import 'package:startup/config.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -19,6 +20,7 @@ void _navigateToCategoryDetails(BuildContext context, int categoryIndex) {
 }
 
 class _CategoriesState extends State<Categories> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,30 +38,41 @@ class _CategoriesState extends State<Categories> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 80.0,
-              color: Colors.blueAccent,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Soldes d\'été',
-                      style: TextStyle(fontSize: 20.0, color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Text(
-                      'jusqu\'à 50% de réduction',
-                      style: TextStyle(fontSize: 12.0, color: Colors.white),
-                    ),
-                  ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.blue,
+                elevation: 3.0,
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Soldes d\'été',
+                        style: TextStyle(
+                          fontSize: fontSize10(context) * 2,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        height: height10px(context) * 1,
+                      ),
+                      Text(
+                        'jusqu\'à 50% de réduction',
+                        style: TextStyle(
+                          fontSize: fontSize10(context) * 1.2,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: height10px(context) * 1,
             ),
             ListView.builder(
               shrinkWrap: true,
@@ -67,58 +80,56 @@ class _CategoriesState extends State<Categories> {
               itemCount: 6,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      if (index == 5) {
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    elevation: 3.0,
+                    child: GestureDetector(
+                      onTap: () {
                         _navigateToCategoryDetails(context, index);
-                      } else {
-                        _navigateToCategoryDetails(context, index);
-                      }
-                    },
-                    child: Container(
-                      height: 80.0,
-                      color: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Categorie ${index + 1}',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                      },
+                      child: AspectRatio(
+                        aspectRatio: 3 / 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Catégorie ${index + 1}',
+                                    style: TextStyle(
+                                      fontSize: fontSize10(context) * 2,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 5.0,
-                                ),
-                                Text(
-                                  '100 product',
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.blueAccent,
+                                  SizedBox(
+                                    height: height10px(context) * 0.5,
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    '100 produits',
+                                    style: TextStyle(
+                                      fontSize: fontSize10(context) * 1.4,
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 140.0,
-                          ),
-                          Image.asset(
-                            'assets/images/image3.png',
-                            width: 100,
-                            height: 100,
-                          ),
-                        ],
+                            SizedBox(
+                              width: width10px(context) * 6.5,
+                            ),
+                            Image.asset(
+                              'assets/images/image3.png',
+                              width: width10px(context) * 16.5,
+                              height: height10px(context) * 16,
+                            ),
+                            SizedBox(
+                              width: width10px(context) * 2,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -127,13 +138,6 @@ class _CategoriesState extends State<Categories> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        home: Icons.home,
-        categories: Icons.category,
-        favorite: Icons.favorite,
-        cart: Icons.shopping_cart,
-        profile: Icons.person,
       ),
     );
   }

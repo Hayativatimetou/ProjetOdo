@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 150,
+        width: width10px(context) * 15,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.blue,
@@ -24,7 +25,7 @@ class CustomButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: fontSize10(context) * 1.6,
               color: Colors.white,
             ),
           ),

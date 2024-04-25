@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 class RememberMeCheckbox extends StatelessWidget {
   final bool value;
@@ -14,10 +15,10 @@ class RememberMeCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       controlAffinity: ListTileControlAffinity.leading,
-      title: const Text(
+      title: Text(
         'Remember me next time',
         style: TextStyle(
-          fontSize: 12,
+          fontSize: fontSize10(context) * 1.2,
         ),
       ),
       value: value,

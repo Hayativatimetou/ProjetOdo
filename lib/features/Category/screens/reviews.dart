@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 import 'package:startup/features/Category/widgets/CustAppbar.dart';
 
 class reviews extends StatefulWidget {
@@ -23,10 +24,11 @@ class _reviewsState extends State<reviews> {
         children: [
           Text(
             ' 4 reviews',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: fontSize10(context) * 2),
           ),
           Container(
-            height: 150,
+            height: height10px(context) * 18,
             padding: const EdgeInsets.all(10.0),
             margin: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
@@ -43,7 +45,7 @@ class _reviewsState extends State<reviews> {
                       backgroundImage: AssetImage('assets/images/image7.png'),
                       radius: 15,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: width10px(context) * 1),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,23 +60,43 @@ class _reviewsState extends State<reviews> {
                             children: [
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Text('2 mins ago'),
                               Spacer(),
@@ -86,9 +108,10 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: height10px(context) * 0.1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
+                  style: TextStyle(fontSize: fontSize10(context) * 1.4),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -102,11 +125,11 @@ class _reviewsState extends State<reviews> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 1.0,
+          SizedBox(
+            height: height10px(context) * 0.1,
           ),
           Container(
-            height: 150,
+            height: height10px(context) * 18,
             padding: const EdgeInsets.all(10.0),
             margin: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
@@ -123,7 +146,7 @@ class _reviewsState extends State<reviews> {
                       backgroundImage: AssetImage('assets/images/image7.png'),
                       radius: 15,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: width10px(context) * 1),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,23 +161,43 @@ class _reviewsState extends State<reviews> {
                             children: [
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Text('2 mins ago'),
                               Spacer(),
@@ -168,9 +211,10 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: height10px(context) * 0.1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
+                  style: TextStyle(fontSize: fontSize10(context) * 1.4),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -184,11 +228,11 @@ class _reviewsState extends State<reviews> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 1.0,
+          SizedBox(
+            height: height10px(context) * 0.1,
           ),
           Container(
-            height: 150,
+            height: height10px(context) * 18,
             padding: const EdgeInsets.all(10.0),
             margin: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
@@ -205,7 +249,7 @@ class _reviewsState extends State<reviews> {
                       backgroundImage: AssetImage('assets/images/image7.png'),
                       radius: 15,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: width10px(context) * 1),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,23 +264,43 @@ class _reviewsState extends State<reviews> {
                             children: [
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Text('2 mins ago'),
                               Spacer(),
@@ -250,9 +314,10 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: height10px(context) * 0.1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
+                  style: TextStyle(fontSize: fontSize10(context) * 1.4),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -266,11 +331,11 @@ class _reviewsState extends State<reviews> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 1.0,
+          SizedBox(
+            height: height10px(context) * 0.1,
           ),
           Container(
-            height: 155,
+            height: height10px(context) * 18,
             padding: const EdgeInsets.all(10.0),
             margin: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
@@ -287,7 +352,7 @@ class _reviewsState extends State<reviews> {
                       backgroundImage: AssetImage('assets/images/image7.png'),
                       radius: 15,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: width10px(context) * 1),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -302,23 +367,43 @@ class _reviewsState extends State<reviews> {
                             children: [
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Icon(
                                 Icons.star,
-                                color: Colors.yellow.shade100,
+                                color: Color.fromARGB(255, 235, 182, 91),
+                                size: 20,
+                              ),
+                              SizedBox(
+                                width: width10px(context) * 0.5,
                               ),
                               Text('2 mins ago'),
                               Spacer(),
@@ -332,25 +417,16 @@ class _reviewsState extends State<reviews> {
                     ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: height10px(context) * 0.1),
                 Text(
                   'Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor aipiscing et voluptate duis sit esse aliqua',
+                  style: TextStyle(fontSize: fontSize10(context) * 1.4),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Icon(Icons.thumb_up, color: Colors.blue),
                   ],
-                ),
-                Container(
-                  child: Center(
-                    child: Container(
-                      width: 100,
-                      height: 2,
-                      color: Colors.black,
-                    ),
-                  ),
-                  margin: EdgeInsets.only(bottom: 3.0),
                 ),
               ],
             ),

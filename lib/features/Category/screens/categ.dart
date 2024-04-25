@@ -3,6 +3,7 @@ import 'package:startup/features/Category/screens/categories.dart';
 import 'package:startup/features/Category/widgets/CustomWidget.dart';
 import 'package:startup/features/Category/widgets/CustomBottomNavigationBar.dart';
 import 'package:startup/features/Panier/screens/panier.dart';
+import 'package:startup/config.dart';
 
 class Categ extends StatefulWidget {
   const Categ({Key? key}) : super(key: key);
@@ -36,18 +37,21 @@ class _CategState extends State<Categ> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 1),
             Text(
               'Lorem Ipsum',
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
+              style: TextStyle(
+                  color: Colors.white, fontSize: fontSize10(context) * 2),
             ),
             Text(
               'Get discounts up to 75%  ',
-              style: TextStyle(color: Colors.white, fontSize: 14.0),
+              style: TextStyle(
+                  color: Colors.white, fontSize: fontSize10(context) * 1.4),
             ),
             Text(
               'for',
-              style: TextStyle(color: Colors.white, fontSize: 14.0),
+              style: TextStyle(
+                  color: Colors.white, fontSize: fontSize10(context) * 1.4),
             ),
           ],
         ),
@@ -55,8 +59,8 @@ class _CategState extends State<Categ> {
           onHorizontalDragEnd: (details) {
             if (details.primaryVelocity! < 0) {
               setState(() {
-                (_currentImageIndex + 1) % appBarImages.length;
-
+                _currentImageIndex =
+                    (_currentImageIndex + 1) % appBarImages.length;
                 _updateCircleColors();
               });
             }
@@ -75,20 +79,18 @@ class _CategState extends State<Categ> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(width: 20),
+              SizedBox(width: width10px(context) * 2.5),
               Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white,
-                ),
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
                     'Shop Now',
-                    style: TextStyle(fontSize: 16, color: Colors.blue),
+                    style: TextStyle(
+                        fontSize: fontSize10(context) * 1.6,
+                        color: Colors.blue),
                   ),
                   style: ElevatedButton.styleFrom(
-                    elevation: 0,
+                    // elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -126,13 +128,13 @@ class _CategState extends State<Categ> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 1),
             Row(
               children: [
                 Text(
                   'Soldes',
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: fontSize10(context) * 2,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
@@ -140,13 +142,14 @@ class _CategState extends State<Categ> {
                 Spacer(),
                 Text(
                   'Voir Tout',
-                  style: TextStyle(color: Colors.blue, fontSize: 16.0),
+                  style: TextStyle(
+                      color: Colors.blue, fontSize: fontSize10(context) * 1.6),
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 0.7),
             Container(
-              height: 300,
+              height: height10px(context) * 40,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
@@ -180,7 +183,7 @@ class _CategState extends State<Categ> {
                     numReviews = 300;
                   }
                   return SizedBox(
-                    width: 155,
+                    width: width10px(context) * 17,
                     child: CustomWidget(
                       imagePath: imagePath,
                       title: title,
@@ -194,13 +197,13 @@ class _CategState extends State<Categ> {
                 },
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 1),
             Row(
               children: [
                 Text(
                   'Nouveau',
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: fontSize10(context) * 2,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
@@ -208,19 +211,20 @@ class _CategState extends State<Categ> {
                 Spacer(),
                 Text(
                   'Voir Tout',
-                  style: TextStyle(color: Colors.blue, fontSize: 16.0),
+                  style: TextStyle(
+                      color: Colors.blue, fontSize: fontSize10(context) * 1.6),
                 ),
               ],
             ),
             SizedBox(
-              height: 10.0,
+              height: height10px(context) * 1,
             ),
             Text(
               'Tu ne las jamais vu auparavanr !',
               style: TextStyle(fontSize: 12.0, color: Colors.grey),
             ),
             Container(
-              height: 300,
+              height: height10px(context) * 40,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
@@ -254,7 +258,7 @@ class _CategState extends State<Categ> {
                     numReviews = 300;
                   }
                   return SizedBox(
-                    width: 155,
+                    width: width10px(context) * 20,
                     child: CustomWidget(
                       imagePath: imagePath,
                       title: title,
@@ -270,32 +274,6 @@ class _CategState extends State<Categ> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        home: Icons.home,
-        categories: Icons.category,
-        favorite: Icons.favorite,
-        cart: Icons.shopping_cart,
-        profile: Icons.person,
-        onTap: (index) {
-          setState(() {
-            if (index == 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Categories(),
-                ),
-              );
-            } else if (index == 3) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => panier(),
-                ),
-              );
-            }
-          });
-        },
       ),
     );
   }

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:startup/features/Category/screens/categ.dart';
+import 'package:startup/features/Category/screens/categories.dart';
 import 'package:startup/features/Category/widgets/CustAppbar.dart';
 import 'package:startup/features/Category/screens/Details.dart';
 import 'package:startup/features/Category/widgets/CustomBottomNavigationBar.dart';
 import 'package:startup/features/Category/widgets/CustomWidget.dart';
+import 'package:startup/config.dart';
+import 'package:startup/features/Panier/screens/panier.dart';
+import 'package:startup/features/main_screen.dart';
 
 class produit extends StatefulWidget {
   const produit({Key? key}) : super(key: key);
@@ -30,16 +36,25 @@ class _produitState extends State<produit> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.search),
-                      label: Text('Search Candles'),
-                      style: ElevatedButton.styleFrom(
-                        elevation: 4,
-                        shape: RoundedRectangleBorder(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                        ),
+                        hintText: 'Search Candles',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: width10px(context) * 0.2),
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
                       ),
                     ),
                   ),
@@ -53,12 +68,12 @@ class _produitState extends State<produit> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: 20.0),
+                              SizedBox(height: height10px(context) * 2),
                               Container(
                                 child: Center(
                                   child: Container(
-                                    width: 100,
-                                    height: 4,
+                                    width: width10px(context) * 10,
+                                    height: height10px(context) * 0.4,
                                     color: Colors.black,
                                   ),
                                 ),
@@ -72,34 +87,37 @@ class _produitState extends State<produit> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text('Apple Populaire',
-                                    style: TextStyle(fontSize: 14.0)),
+                                    style: TextStyle(
+                                        fontSize: fontSize10(context) * 1.4)),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text('Plus Récent',
-                                    style: TextStyle(fontSize: 14.0)),
+                                    style: TextStyle(
+                                        fontSize: fontSize10(context) * 1.4)),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text('Avis des Clients',
-                                    style: TextStyle(fontSize: 14.0)),
+                                    style: TextStyle(
+                                        fontSize: fontSize10(context) * 1.4)),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                               GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Details(),
-                                    ),
-                                  );
-                                },
+                                // onTap: () {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (context) => Details(),
+                                //     ),
+                                //   );
+                                // },
                                 child: Container(
                                   color: Colors.blue,
                                   padding: EdgeInsets.all(8.0),
@@ -107,19 +125,19 @@ class _produitState extends State<produit> {
                                   child: Text(
                                     'Prix: du plus bas au plus élevé',
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: fontSize10(context) * 1.4,
                                       color: Colors.white,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text('Prix: du plus élevé au plus bas',
                                     style: TextStyle(fontSize: 14.0)),
                               ),
-                              SizedBox(height: 30.0),
+                              SizedBox(height: height10px(context) * 3),
                             ],
                           ),
                         );
@@ -130,86 +148,127 @@ class _produitState extends State<produit> {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.notifications),
+                  icon: Icon(
+                    Icons.notifications,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 1),
             IntrinsicHeight(
               child: Row(
                 children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 8.0), // Ajuster la marge gauche
-                      child: CustomWidget(
-                        imagePath: 'assets/images/image1.png',
-                        title: 'Lorem',
-                        currentPrice: '300.00Mru',
-                        previousPrice: '500.00Mru',
-                        rating: 4.9,
-                        numReviews: 256,
-                        showFavorite: false,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Details(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: width10px(context) * 20,
+                      child: Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: CustomWidget(
+                            imagePath: 'assets/images/image1.png',
+                            title: 'Lorem',
+                            currentPrice: '300.00Mru',
+                            previousPrice: '500.00Mru',
+                            rating: 4.9,
+                            numReviews: 256,
+                            showFavorite: false,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 4.0),
-                      child: CustomWidget(
-                        imagePath: 'assets/images/image1.png',
-                        title: 'Lorem',
-                        currentPrice: '300.00Mru',
-                        previousPrice: '500.00Mru',
-                        rating: 4.9,
-                        numReviews: 256,
-                        showNew: false,
-                        cardColor: Colors.white,
-                        showFavorite: false,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Details(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: width10px(context) * 18,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 4.0),
+                        child: CustomWidget(
+                          imagePath: 'assets/images/image1.png',
+                          title: 'Lorem',
+                          currentPrice: '300.00Mru',
+                          previousPrice: '500.00Mru',
+                          rating: 4.9,
+                          numReviews: 256,
+                          showNew: false,
+                          cardColor: Colors.white,
+                          showFavorite: false,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height10px(context) * 1),
             Row(
               children: [
-                Expanded(
-                  child: CustomWidget(
-                    imagePath: 'assets/images/image4.jpg',
-                    title: 'Lorem',
-                    currentPrice: '300.00Mru',
-                    previousPrice: '500.00Mru',
-                    rating: 4.9,
-                    numReviews: 256,
-                    showNew: false,
-                    showFavorite: false,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Details(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: width10px(context) * 20,
+                    child: CustomWidget(
+                      imagePath: 'assets/images/image4.jpg',
+                      title: 'Lorem',
+                      currentPrice: '300.00Mru',
+                      previousPrice: '500.00Mru',
+                      rating: 4.9,
+                      numReviews: 256,
+                      showNew: false,
+                      showFavorite: false,
+                    ),
                   ),
                 ),
-                Expanded(
-                  child: CustomWidget(
-                    imagePath: 'assets/images/image2.jpg',
-                    title: 'Lorem',
-                    currentPrice: '300.00Mru',
-                    previousPrice: '500.00Mru',
-                    rating: 4.8,
-                    numReviews: 128,
-                    showNew: false,
-                    showFavorite: false,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Details(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: width10px(context) * 18,
+                    child: CustomWidget(
+                      imagePath: 'assets/images/image2.jpg',
+                      title: 'Lorem',
+                      currentPrice: '300.00Mru',
+                      previousPrice: '500.00Mru',
+                      rating: 4.8,
+                      numReviews: 128,
+                      showNew: false,
+                      showFavorite: false,
+                    ),
                   ),
                 ),
               ],
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        home: Icons.home,
-        categories: Icons.category,
-        favorite: Icons.favorite,
-        cart: Icons.shopping_cart,
-        profile: Icons.person,
       ),
     );
   }

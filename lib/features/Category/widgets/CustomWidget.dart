@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 import 'package:startup/features/Category/screens/reviews.dart';
 
 class CustomWidget extends StatelessWidget {
@@ -13,8 +14,7 @@ class CustomWidget extends StatelessWidget {
     this.showNew = true,
     this.cardColor = Colors.white,
     this.showFavorite = true,
-    this.favorite =
-        Icons.favorite, // Ajout de la valeur par défaut pour favorite
+    this.favorite = Icons.favorite,
   }) : super(key: key);
 
   final String imagePath;
@@ -24,8 +24,7 @@ class CustomWidget extends StatelessWidget {
   final double rating;
   final int numReviews;
   final bool showNew;
-  final bool
-      showFavorite; // Nouvelle propriété pour contrôler l'affichage de l'icône "favorite"
+  final bool showFavorite;
   final Color cardColor;
   final IconData favorite;
 
@@ -46,25 +45,25 @@ class CustomWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                if (showFavorite) // Afficher l'icône "favorite" si showFavorite est vrai
+                if (showFavorite)
                   Container(
-                    width: 30, // Taille du cercle
-                    height: 30, // Taille du cercle
+                    width: width10px(context) * 3,
+                    height: height10px(context) * 3,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white, // Couleur du cercle
+                      color: Colors.white,
                     ),
                     child: Center(
                       child: Icon(
-                        favorite, // Utilisation de la propriété favorite pour l'icône
-                        color: Colors.red, // Couleur de l'icône
-                        size: 18, // Taille de l'icône
+                        favorite,
+                        color: Colors.red,
+                        size: 18,
                       ),
                     ),
                   ),
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: width10px(context) * 12,
+                  height: height10px(context) * 12.1,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -72,53 +71,50 @@ class CustomWidget extends StatelessWidget {
                 ),
                 if (showNew)
                   Container(
-                    width: 60,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Colors.green,
-                    ),
+                    width: width10px(context) * 6,
+                    height: height10px(context) * 3,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         'New',
                         style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
+                          fontSize: fontSize10(context) * 1.2,
+                          color: Colors.white,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        elevation: 0,
+                        // elevation: 0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(15),
                         ),
+                        backgroundColor: Colors.black,
                         padding: EdgeInsets.zero,
                       ),
                     ),
                   ),
                 Text(
                   title,
-                  style: const TextStyle(
-                    fontSize: 16.0,
+                  style: TextStyle(
+                    fontSize: fontSize10(context) * 1.6,
                   ),
                 ),
-                const SizedBox(height: 5.0),
+                SizedBox(height: height10px(context) * 0.5),
                 Text(
                   currentPrice,
-                  style: const TextStyle(
-                    fontSize: 18.0,
+                  style: TextStyle(
+                    fontSize: fontSize10(context) * 1.8,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 5.0),
+                SizedBox(height: height10px(context) * 0.5),
                 Text(
                   previousPrice,
-                  style: const TextStyle(
-                    fontSize: 14.0,
+                  style: TextStyle(
+                    fontSize: fontSize10(context) * 1.4,
                     decoration: TextDecoration.lineThrough,
                   ),
                 ),
-                const SizedBox(height: 10.0),
+                SizedBox(height: height10px(context) * 1),
                 Row(
                   children: <Widget>[
                     GestureDetector(
@@ -132,10 +128,10 @@ class CustomWidget extends StatelessWidget {
                       },
                       child: const Icon(
                         Icons.star,
-                        color: Colors.yellow,
+                        color: Color.fromARGB(255, 235, 182, 91),
                       ),
                     ),
-                    const SizedBox(width: 5.0),
+                    SizedBox(width: width10px(context) * 0.5),
                     Text('$rating($numReviews)'),
                   ],
                 ),

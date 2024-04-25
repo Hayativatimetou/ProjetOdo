@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 class custAppbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? chevronLeftCallback;
@@ -26,10 +27,14 @@ class custAppbar extends StatelessWidget implements PreferredSizeWidget {
               color: Colors.black,
               size: 30,
             ),
-            onPressed: chevronLeftCallback,
+            onPressed: () {
+              if (context != null) {
+                Navigator.of(context!).pop();
+              }
+            },
           ),
-          SizedBox(width: 8),
-          Spacer(), // Ajout du Spacer pour pousser le titre au centre
+          SizedBox(width: width10px(context) * 0.8),
+          Spacer(),
           title != null
               ? Text(
                   title!,
@@ -39,7 +44,7 @@ class custAppbar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 )
               : SizedBox(),
-          Spacer(), // Ajout du Spacer pour pousser les icônes de droite au bord droit
+          Spacer(),
           IconButton(
             onPressed: searchCallback,
             icon: Icon(Icons.search, color: Colors.black),

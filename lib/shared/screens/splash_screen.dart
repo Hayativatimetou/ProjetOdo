@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:startup/features/main_screen.dart';
 
 import '../../app_constants.dart';
 import '../../config.dart';
@@ -18,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       Get.off(() => SignUpsScreen());
+      //Get.off(() => MyHomeScreen());
     });
   }
 

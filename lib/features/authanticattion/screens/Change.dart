@@ -8,6 +8,9 @@ import 'package:startup/features/authanticattion/widgets/CustomText.dart';
 import 'package:startup/features/authanticattion/widgets/RememberMeCheckbox.dart';
 import 'package:startup/features/authanticattion/screens/LoginS.dart';
 import 'package:startup/features/Category/screens/categ.dart';
+import 'package:startup/config.dart';
+import 'package:startup/features/main_screen.dart';
+// import 'package:startup/features/Category/screens/categ.dart';
 //import 'package:startup/features/authanticattion/screens/sign_ups_screen.dart.dart';
 
 class Change extends StatefulWidget {
@@ -18,6 +21,9 @@ class Change extends StatefulWidget {
 }
 
 class _ChangeState extends State<Change> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,69 +34,101 @@ class _ChangeState extends State<Change> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomText(
-              text: 'Change your password ',
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            CustomText(
-              text: 'Please entre your pssword',
-              fontSize: 14.0,
-              color: Colors.grey,
-            ),
-            const SizedBox(
-              height: 10.0,
-              width: 10,
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hint: "New Pasword",
-              keyboardtype: TextInputType.visiblePassword,
-              prefix: Icons.lock,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            CustomText(
-              text:
-                  'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
-              fontSize: 12.0,
-              color: Colors.grey,
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hint: "Confirm Password ",
-              keyboardtype: TextInputType.visiblePassword,
-              prefix: Icons.lock,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            CustomText(
-              text:
-                  'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
-              fontSize: 12.0,
-              color: Colors.grey,
-            ),
-            SizedBox(height: 80),
-            Center(
-              child: CustomButton(
-                text: 'Sign In',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Categ()),
-                  );
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(
+                text: 'Change your password ',
+                fontSize: fontSize10(context) * 2.4,
+                fontWeight: FontWeight.bold,
+              ),
+              SizedBox(
+                height: height10px(context) * 2,
+              ),
+              CustomText(
+                text: 'Please entre your pssword',
+                fontSize: fontSize10(context) * 1.4,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: height10px(context) * 1,
+                width: width10px(context) * 1,
+              ),
+              SizedBox(height: height10px(context) * 2),
+              CustomTextFormField(
+                controller: _passwordController,
+                hint: "New Pasword",
+                keyboardtype: TextInputType.visiblePassword,
+                prefix: Icons.lock_outline,
+                iconColor: Colors.white,
+                iconBorderColor: Colors.black,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
                 },
               ),
-            ),
-          ],
+              SizedBox(
+                height: height10px(context) * 1,
+              ),
+              CustomText(
+                text:
+                    'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
+                fontSize: fontSize10(context) * 1.2,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: height10px(context) * 1,
+              ),
+              CustomTextFormField(
+                hint: "Confirm Password ",
+                keyboardtype: TextInputType.visiblePassword,
+                prefix: Icons.lock_outline,
+                iconColor: Colors.white,
+                iconBorderColor: Colors.black,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(
+                height: height10px(context) * 1,
+              ),
+              CustomText(
+                text:
+                    'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
+                fontSize: fontSize10(context) * 1.2,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: height10px(context) * 8,
+              ),
+              Center(
+                child: CustomButton(
+                  text: 'Sign In',
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => Categ()),
+                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomeScreen()),
+                      );
+                    } else {
+                      print('Please fill in all fields!');
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

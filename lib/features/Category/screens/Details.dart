@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:startup/features/Category/widgets/CustomBottomNavigationBar.dart';
 import 'package:startup/features/Category/widgets/CustomWidget.dart';
+import 'package:startup/config.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);
@@ -20,7 +21,11 @@ class _DetailsState extends State<Details> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(Icons.chevron_left, color: Colors.black),
-          onPressed: () {},
+          onPressed: () {
+            if (context != null) {
+              Navigator.of(context!).pop();
+            }
+          },
         ),
         title: Text(
           'Detail P1',
@@ -45,18 +50,18 @@ class _DetailsState extends State<Details> {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 10.0,
+                    width: width10px(context) * 1,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/image5.jpg',
-                      width: 250,
-                      height: 200,
+                      width: width10px(context) * 25,
+                      height: height10px(context) * 20,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(width: 10.0),
+                  SizedBox(width: width10px(context) * 1),
                   Padding(
                     padding:
                         const EdgeInsets.only(right: 5, top: 8.0, bottom: 8.0),
@@ -64,8 +69,8 @@ class _DetailsState extends State<Details> {
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
                         'assets/images/image6.png',
-                        width: 250,
-                        height: 200,
+                        width: width10px(context) * 25,
+                        height: height10px(context) * 20,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -73,79 +78,104 @@ class _DetailsState extends State<Details> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(width: 5.0),
-                  SizedBox(height: 20.0),
+                  SizedBox(width: width10px(context) * 0.5),
+                  SizedBox(height: height10px(context) * 2),
                   Text(
                     'Produit 1',
                     style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: fontSize10(context) * 2,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: height10px(context) * 1),
                   Text(
                     'Lorem',
-                    style: TextStyle(fontSize: 14.0, color: Colors.grey),
+                    style: TextStyle(
+                        fontSize: fontSize10(context) * 1.4,
+                        color: Colors.grey),
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: height10px(context) * 1),
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 8.0),
               child: Row(
                 children: <Widget>[
-                  SizedBox(width: 5.0),
+                  SizedBox(width: width10px(context) * 0.5),
                   Icon(
                     Icons.star,
-                    color: Colors.yellow,
+                    color: Color.fromARGB(255, 235, 182, 91),
+                    size: 20,
                   ),
-                  SizedBox(width: 5.0),
-                  Icon(
-                    Icons.star,
-                    color: Colors.yellow,
+                  SizedBox(
+                    width: width10px(context) * 0.5,
                   ),
-                  SizedBox(width: 5.0),
                   Icon(
                     Icons.star,
-                    color: Colors.yellow,
+                    color: Color.fromARGB(255, 235, 182, 91),
+                    size: 20,
                   ),
-                  SizedBox(width: 5.0),
-                  Icon(
-                    Icons.star,
-                    color: Colors.yellow,
+                  SizedBox(
+                    width: width10px(context) * 0.5,
                   ),
-                  SizedBox(width: 5.0),
                   Icon(
                     Icons.star,
-                    color: Colors.yellow,
+                    color: Color.fromARGB(255, 235, 182, 91),
+                    size: 20,
+                  ),
+                  SizedBox(
+                    width: width10px(context) * 0.5,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color.fromARGB(255, 235, 182, 91),
+                    size: 20,
+                  ),
+                  SizedBox(
+                    width: width10px(context) * 0.5,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color.fromARGB(255, 235, 182, 91),
+                    size: 20,
+                  ),
+                  SizedBox(
+                    width: width10px(context) * 0.5,
                   ),
                   Text('(10)'),
-                  SizedBox(width: 120.0),
+                  SizedBox(width: width10px(context) * 12),
                   Text(
                     '1900MRU',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: fontSize10(context) * 2,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20.0),
-            const Padding(
+            SizedBox(height: height10px(context) * 2),
+            Padding(
               padding: EdgeInsets.only(left: 8.0),
-              child: Text(
-                'Notre mélange offre une combinaison savoureuse de raisins secs, cannebecrges, abricots, amandes, noix de cajou, noisettes et noix de coco,parfait pour une collation saine et energisante a tout moment de la journee ',
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Notre mélange offre une combinaison savoureuse de raisins secs, cranberries, abricots, amandes, noix de cajou, noisettes et noix de coco. Parfait pour une collation saine et énergisante à tout moment de la journée',
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 20.0),
+            SizedBox(height: height10px(context) * 2),
             Container(
-              height: 100.0,
+              height: height10px(context) * 10,
               color: Colors.white,
               child: Center(
                 child: Column(
@@ -158,21 +188,32 @@ class _DetailsState extends State<Details> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: const Text(
+                          child: Text(
                             'Ajouter au panier',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            style: TextStyle(
+                              fontSize: fontSize10(context) * 1.6,
+                              color: Colors.white, // Couleur du texte
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 37, 156, 213),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            elevation: 0,
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 15.0,
+                      height: height10px(context) * 1.5,
                     ),
                     Container(
                       child: Center(
                         child: Container(
-                          width: 100,
-                          height: 4,
+                          width: width10px(context) * 10,
+                          height: height10px(context) * 0.4,
                           color: Colors.black,
                         ),
                       ),
@@ -183,38 +224,17 @@ class _DetailsState extends State<Details> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
+              height: height10px(context) * 6,
               child: Row(
                 children: <Widget>[
-                  const Expanded(
+                  Expanded(
                     child: Text(
                       'Informations sur la livraison',
-                      style: TextStyle(fontSize: 14.0),
+                      style: TextStyle(fontSize: fontSize10(context) * 1.4),
                     ),
                   ),
-                  const SizedBox(width: 5.0),
-                  IconButton(
-                    icon: Icon(Icons.chevron_right, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
-            const Divider(
-              height: 1.0,
-              color: Colors.grey,
-            ),
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Row(
-                children: <Widget>[
-                  const Expanded(
-                    child: Text(
-                      'Support',
-                      style: TextStyle(fontSize: 14.0),
-                    ),
-                  ),
-                  SizedBox(width: 5.0),
+                  SizedBox(width: width10px(context) * 0.5),
                   IconButton(
                     icon: Icon(Icons.chevron_right, color: Colors.black),
                     onPressed: () {},
@@ -223,30 +243,53 @@ class _DetailsState extends State<Details> {
               ),
             ),
             Divider(
-              height: 1.0,
+              height: height10px(context) * 0.1,
               color: Colors.grey,
             ),
             Container(
-              padding: const EdgeInsets.all(10.0),
-              child: const Row(
+              padding: EdgeInsets.all(8.0),
+              height: height10px(context) * 6,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      'Support',
+                      style: TextStyle(fontSize: fontSize10(context) * 1.4),
+                    ),
+                  ),
+                  SizedBox(width: width10px(context) * 0.5),
+                  IconButton(
+                    icon: Icon(Icons.chevron_right, color: Colors.black),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              height: height10px(context) * 0.1,
+              color: Colors.grey,
+            ),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Row(
                 children: <Widget>[
                   Expanded(
                     child: Text(
                       'Vous pourriez également aimer ceci',
                       style: TextStyle(
-                        fontSize: 12.0,
+                        fontSize: fontSize10(context) * 1.2,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(width: 5.0),
+                  SizedBox(width: width10px(context) * 0.4),
                   Text('12 items'),
                 ],
               ),
             ),
             SizedBox(
-              height: 10,
+              height: height10px(context) * 1,
             ),
             Row(
               children: [
@@ -272,13 +315,6 @@ class _DetailsState extends State<Details> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        home: Icons.home,
-        categories: Icons.category,
-        favorite: Icons.favorite,
-        cart: Icons.shopping_cart,
-        profile: Icons.person,
       ),
     );
   }

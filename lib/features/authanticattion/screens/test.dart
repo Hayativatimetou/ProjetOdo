@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:startup/config.dart';
 
 import 'package:startup/features/authanticattion/widgets/CustomAppBar.dart';
 import 'package:startup/features/authanticattion/widgets/CustomText.dart';
@@ -31,19 +32,21 @@ class _TestState extends State<Test> {
           children: [
             CustomText(
               text: 'Forgot your password?',
-              fontSize: 24.0,
+              fontSize: fontSize10(context) * 2.4,
               fontWeight: FontWeight.bold,
             ),
             SizedBox(
-              height: 10.0,
+              height: height10px(context) * 1,
             ),
             CustomText(
               text:
                   'If you need help resetting your password we can help by sending you a link to reset it.',
-              fontSize: 14.0,
+              fontSize: fontSize10(context) * 1.4,
               color: Colors.grey,
             ),
-            SizedBox(height: 20),
+            SizedBox(
+              height: height10px(context) * 2,
+            ),
             IntlPhoneField(
               controller: _phoneController,
               decoration: InputDecoration(
@@ -56,7 +59,7 @@ class _TestState extends State<Test> {
               },
             ),
             SizedBox(
-              height: 20.0,
+              height: height10px(context) * 2,
             ),
             Center(
               child: CustomButton(

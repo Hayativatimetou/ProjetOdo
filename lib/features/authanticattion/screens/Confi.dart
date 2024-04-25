@@ -4,6 +4,7 @@ import 'package:startup/features/authanticattion/widgets/CustomText.dart';
 import 'package:flutter/services.dart';
 import 'package:startup/features/authanticattion/widgets/CustomButton.dart';
 import 'package:startup/features/authanticattion/screens/Change.dart';
+import 'package:startup/config.dart';
 
 class Config extends StatefulWidget {
   const Config({Key? key}) : super(key: key);
@@ -38,54 +39,55 @@ class _ConfigState extends State<Config> {
           children: [
             CustomText(
               text: 'Phone Verification',
-              fontSize: 24.0,
+              fontSize: fontSize10(context) * 2.5,
               fontWeight: FontWeight.bold,
             ),
             SizedBox(
-              height: 10.0,
+              height: height10px(context) * 1,
             ),
             CustomText(
               text: 'Please enter the 4-digit code sent to you at',
-              fontSize: 14.0,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            CustomText(
-              text: '+61 44 535 235',
-              fontSize: 14.0,
+              fontSize: fontSize10(context) * 1.5,
               color: Colors.black,
             ),
             SizedBox(
-              height: 10.0,
+              height: height10px(context) * 1,
+            ),
+            CustomText(
+              text: '+61 44 535 235',
+              fontSize: fontSize10(context) * 1.5,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+            SizedBox(
+              height: height10px(context) * 1,
             ),
             CustomText(
               text: 'Resend Code',
-              fontSize: 14.0,
+              fontSize: fontSize10(context) * 1.5,
               color: Colors.grey,
             ),
-            const SizedBox(height: 20.0),
+            SizedBox(height: height10px(context) * 2),
             Row(
               children: <Widget>[
-                const SizedBox(
-                  height: 40,
-                  width: 40,
+                SizedBox(
+                  height: height10px(context) * 2,
+                  width: width10px(context) * 2,
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: Container(
-                    width: 40,
-                    height: 40,
+                    width: width10px(context) * 6,
+                    height: height10px(context) * 6,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.grey,
+                      color: Colors.grey.shade100,
                     ),
                     child: Center(
                       child: Text(
                         '4',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: fontSize10(context) * 2,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
@@ -93,17 +95,17 @@ class _ConfigState extends State<Config> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 15,
+                SizedBox(
+                  width: width10px(context) * 0.5,
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: Container(
-                    width: 40,
-                    height: 40,
+                    width: width10px(context) * 6,
+                    height: height10px(context) * 6,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.grey,
+                      color: Colors.grey.shade100,
                     ),
                     child: Center(
                       child: TextFormField(
@@ -111,7 +113,7 @@ class _ConfigState extends State<Config> {
                         maxLength: 1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: fontSize10(context) * 2,
                           color: Colors.black,
                         ),
                         decoration: InputDecoration(
@@ -122,17 +124,17 @@ class _ConfigState extends State<Config> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 15,
+                SizedBox(
+                  width: width10px(context) * 0.5,
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: Container(
-                    width: 40,
-                    height: 40,
+                    width: width10px(context) * 6,
+                    height: height10px(context) * 6,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.grey,
+                      color: Colors.grey.shade100,
                     ),
                     child: Center(
                       child: TextFormField(
@@ -140,7 +142,7 @@ class _ConfigState extends State<Config> {
                         maxLength: 1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: fontSize10(context) * 2,
                           color: Colors.black,
                         ),
                         decoration: InputDecoration(
@@ -151,17 +153,17 @@ class _ConfigState extends State<Config> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
+                SizedBox(
+                  width: width10px(context) * 0.5,
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: Container(
-                    width: 40,
-                    height: 40,
+                    width: width10px(context) * 6,
+                    height: height10px(context) * 6,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.grey,
+                      color: Colors.grey.shade100,
                     ),
                     child: Center(
                       child: TextFormField(
@@ -169,7 +171,7 @@ class _ConfigState extends State<Config> {
                         maxLength: 1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: fontSize10(context) * 2,
                           color: Colors.black,
                         ),
                         decoration: InputDecoration(
@@ -180,10 +182,12 @@ class _ConfigState extends State<Config> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 30),
+                SizedBox(width: width10px(context) * 0.5),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(
+              height: height10px(context) * 2,
+            ),
             Center(
               child: CustomButton(
                 text: 'Next',

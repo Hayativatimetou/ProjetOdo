@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onMorePressed;
   final VoidCallback? onClosePressed;
-  final BuildContext? context; // Ajout du contexte
+  final BuildContext? context;
 
   const CustomAppBar({
     this.onMorePressed,
@@ -15,12 +16,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: Icon(Icons.arrow_back),
         onPressed: () {
           if (context != null) {
-            Navigator.of(context!).pop(); // Retour à l'écran précédent
+            Navigator.of(context!).pop();
           }
         },
       ),
@@ -28,8 +30,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           onPressed: onClosePressed,
           icon: Container(
-            width: 40,
-            height: 40,
+            width: width10px(context) * 4,
+            height: height10px(context) * 4,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey.shade200,

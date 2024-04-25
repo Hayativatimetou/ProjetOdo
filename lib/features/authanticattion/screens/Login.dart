@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
+import 'package:startup/features/authanticattion/screens/LoginS.dart';
 import 'package:startup/features/authanticattion/widgets/Custom_text_form_field.dart';
 import 'package:startup/features/authanticattion/widgets/SocialIconButton.dart';
 import 'package:startup/features/authanticattion/widgets/CustomButton.dart';
@@ -6,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:startup/features/authanticattion/widgets/CustomAppBar.dart';
 import 'package:startup/features/authanticattion/widgets/CustomText.dart';
 import 'package:startup/features/authanticattion/widgets/RememberMeCheckbox.dart';
-import 'package:startup/features/authanticattion/screens/LoginS.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -16,6 +17,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,69 +31,102 @@ class _LoginState extends State<Login> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomText(
-              text: 'Welcome',
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            CustomText(
-              text: 'Sign up with Social of fill the form to continue .',
-              fontSize: 14.0,
-              color: Colors.grey,
-            ),
-            const SizedBox(
-              height: 60.0,
-              width: 10,
-            ),
-            Container(
-              height: 1.0, // Hauteur de la ligne
-              color: Colors.grey, // Couleur de la ligne
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hint: "yessie",
-              keyboardtype: TextInputType.name,
-              prefix: Icons.person,
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hint: "........",
-              keyboardtype: TextInputType.visiblePassword,
-              prefix: Icons.lock,
-            ),
-            SizedBox(height: 20.0),
-            RememberMeCheckbox(
-              value: true,
-              onChanged: (bool newValue) {},
-            ),
-            const SizedBox(
-              height: 100.0,
-              width: 30,
-            ),
-            SocialIconButtonRow(
-              twitterIcon: FontAwesomeIcons.twitter,
-              facebookIcon: Icons.facebook,
-              appleIcon: Icons.apple,
-            ),
-            SizedBox(height: 20),
-            Center(
-              child: CustomButton(
-                text: 'Sign In',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginS()),
-                  );
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(
+                text: 'Welcome',
+                fontSize: fontSize10(context) * 2.4,
+                fontWeight: FontWeight.bold,
+              ),
+              SizedBox(
+                height: height10px(context) * 1,
+              ),
+              CustomText(
+                text: 'Sign up with Social of fill the form to continue .',
+                fontSize: fontSize10(context) * 1.4,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: height10px(context) * 6,
+                width: width10px(context) * 1,
+              ),
+              Container(
+                height: height10px(context) * 0.1,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: height10px(context) * 2,
+              ),
+              CustomTextFormField(
+                controller: _nameController,
+                hint: "yessie",
+                keyboardtype: TextInputType.name,
+                prefix: Icons.person_2_outlined,
+                iconColor: Colors.white,
+                iconBorderColor: Colors.black,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
                 },
               ),
-            ),
-          ],
+              SizedBox(
+                height: height10px(context) * 2,
+              ),
+              CustomTextFormField(
+                controller: _passwordController,
+                hint: "........",
+                keyboardtype: TextInputType.visiblePassword,
+                prefix: Icons.lock_outline,
+                iconColor: Colors.white,
+                iconBorderColor: Colors.black,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(
+                height: height10px(context) * 2,
+              ),
+              RememberMeCheckbox(
+                value: true,
+                onChanged: (bool newValue) {},
+              ),
+              SizedBox(
+                height: height10px(context) * 10,
+                width: width10px(context) * 3,
+              ),
+              SocialIconButtonRow(
+                twitterIcon: FontAwesomeIcons.twitter,
+                facebookIcon: Icons.facebook,
+                appleIcon: Icons.apple,
+              ),
+              SizedBox(
+                height: height10px(context) * 2,
+              ),
+              Center(
+                child: CustomButton(
+                  text: 'Sign In',
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginS()),
+                      );
+                    } else {
+                      print('Please fill in all fields!');
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
