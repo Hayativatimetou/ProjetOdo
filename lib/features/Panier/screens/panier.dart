@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:startup/features/Panier/screens/Pan.dart';
 import 'package:startup/features/Panier/widgets/CustomButton.dart';
+import 'package:startup/config.dart';
 
 class panier extends StatefulWidget {
   const panier({Key? key}) : super(key: key);
@@ -10,6 +11,36 @@ class panier extends StatefulWidget {
 }
 
 class _panierState extends State<panier> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  int quantity = 1;
+
+  void incrementQuantity() {
+    setState(() {
+      quantity++;
+    });
+  }
+
+  void decrementQuantity() {
+    setState(() {
+      if (quantity > 1) {
+        quantity--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +65,7 @@ class _panierState extends State<panier> {
               child: Text(
                 'Panier',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: fontSize10(context) * 2,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -49,26 +80,29 @@ class _panierState extends State<panier> {
                 children: [
                   Image.asset(
                     'assets/images/image8.png',
-                    width: 100,
-                    height: 100,
+                    width: width10px(context) * 10,
+                    height: height10px(context) * 10,
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: width10px(context) * 2),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
+                            SizedBox(
+                              height: height10px(context) * 2,
+                            ),
                             Text(
                               'Produit 1',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(
-                              width: 112,
+                              width: width10px(context) * 13,
                             ),
                             PopupMenuButton(
                               itemBuilder: (BuildContext context) {
@@ -91,66 +125,161 @@ class _panierState extends State<panier> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: height10px(context) * 3),
                         Row(
                           children: [
                             Text(
                               '510 MRU',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                               ),
                             ),
-                            SizedBox(
-                              width: 65.0,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '-',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
-                                  ),
+                            SizedBox(width: width10px(context) * 8),
+                            InkWell(
+                              onTap: decrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
                                 ),
+                                child: Icon(Icons.remove),
                               ),
                             ),
+                            SizedBox(width: width10px(context) * 1),
+                            Text(
+                              '$quantity',
+                              style: TextStyle(
+                                fontSize: fontSize10(context) * 1.2,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(width: width10px(context) * 1),
+                            InkWell(
+                              onTap: incrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: Icon(Icons.add),
+                              ),
+                            ),
+                            SizedBox(height: height10px(context) * 5),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: height10px(context) * 0.2,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              elevation: 3.0,
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/images/image8.png',
+                    width: width10px(context) * 10,
+                    height: height10px(context) * 10,
+                  ),
+                  SizedBox(width: width10px(context) * 2),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
                             SizedBox(
-                              width: 10,
+                              height: height10px(context) * 2,
                             ),
                             Text(
-                              '1',
+                              'Produit 1',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: fontSize10(context) * 1.4,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: width10px(context) * 13,
                             ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
+                            PopupMenuButton(
+                              itemBuilder: (BuildContext context) {
+                                return [
+                                  PopupMenuItem(
+                                    child: Text("Ajouter au favoris"),
+                                    value: "favorite",
                                   ),
-                                ),
+                                  PopupMenuItem(
+                                    child: Text("Supprimer de la liste"),
+                                    value: "remove",
+                                  ),
+                                ];
+                              },
+                              onSelected: (value) {
+                                if (value == "favorite") {
+                                } else if (value == "remove") {}
+                              },
+                              icon: Icon(Icons.more_vert, color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: height10px(context) * 3),
+                        Row(
+                          children: [
+                            Text(
+                              '510 MRU',
+                              style: TextStyle(
+                                fontSize: fontSize10(context) * 1.4,
+                                color: Colors.black,
                               ),
                             ),
+                            SizedBox(width: width10px(context) * 8),
+                            InkWell(
+                              onTap: decrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: Icon(Icons.remove),
+                              ),
+                            ),
+                            SizedBox(width: width10px(context) * 1),
+                            Text(
+                              '$quantity',
+                              style: TextStyle(
+                                fontSize: fontSize10(context) * 1.2,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(width: width10px(context) * 1),
+                            InkWell(
+                              onTap: incrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: Icon(Icons.add),
+                              ),
+                            ),
+                            SizedBox(height: height10px(context) * 5),
                           ],
                         )
                       ],
@@ -162,8 +291,9 @@ class _panierState extends State<panier> {
           ),
 
           SizedBox(
-            height: 5,
+            height: height10px(context) * 0.2,
           ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -172,26 +302,29 @@ class _panierState extends State<panier> {
                 children: [
                   Image.asset(
                     'assets/images/image8.png',
-                    width: 100,
-                    height: 100,
+                    width: width10px(context) * 10,
+                    height: height10px(context) * 10,
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: width10px(context) * 2),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
+                            SizedBox(
+                              height: height10px(context) * 2,
+                            ),
                             Text(
                               'Produit 1',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(
-                              width: 112,
+                              width: width10px(context) * 13,
                             ),
                             PopupMenuButton(
                               itemBuilder: (BuildContext context) {
@@ -214,190 +347,51 @@ class _panierState extends State<panier> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: height10px(context) * 3),
                         Row(
                           children: [
                             Text(
                               '510 MRU',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                               ),
                             ),
-                            SizedBox(
-                              width: 65.0,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '-',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
-                                  ),
+                            SizedBox(width: width10px(context) * 8),
+                            InkWell(
+                              onTap: decrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
                                 ),
+                                child: Icon(Icons.remove),
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
+                            SizedBox(width: width10px(context) * 1),
                             Text(
-                              '1',
+                              '$quantity',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: fontSize10(context) * 1.2,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
-                                  ),
+                            SizedBox(width: width10px(context) * 1),
+                            InkWell(
+                              onTap: incrementQuantity,
+                              child: Container(
+                                width: width10px(context) * 3,
+                                height: width10px(context) * 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(
-            height: 5,
-          ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              elevation: 3.0,
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/image8.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Produit 1',
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 112,
-                            ),
-                            PopupMenuButton(
-                              itemBuilder: (BuildContext context) {
-                                return [
-                                  PopupMenuItem(
-                                    child: Text("Ajouter au favoris"),
-                                    value: "favorite",
-                                  ),
-                                  PopupMenuItem(
-                                    child: Text("Supprimer de la liste"),
-                                    value: "remove",
-                                  ),
-                                ];
-                              },
-                              onSelected: (value) {
-                                if (value == "favorite") {
-                                } else if (value == "remove") {}
-                              },
-                              icon: Icon(Icons.more_vert, color: Colors.grey),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 30),
-                        Row(
-                          children: [
-                            Text(
-                              '510 MRU',
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                color: Colors.black,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 65.0,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '-',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              '1',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            SizedBox(height: height10px(context) * 5),
                           ],
                         )
                       ],
@@ -409,7 +403,7 @@ class _panierState extends State<panier> {
           ),
           //),
           SizedBox(
-            height: 5,
+            height: height10px(context) * 0.1,
           ),
 
           Padding(
@@ -417,18 +411,20 @@ class _panierState extends State<panier> {
             child: Card(
               elevation: 1.0,
               child: ListTile(
-                title: Row(
-                  children: [
-                    Expanded(
-                      child: Text('Entrer votre code promo'),
-                    ),
-                  ],
+                title: TextField(
+                  // controller: _controller,
+                  decoration: InputDecoration(
+                    hintText: 'Entrer votre code promo',
+                  ),
                 ),
                 trailing: CircleAvatar(
                   backgroundColor: Colors.black,
-                  child: Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
                 ),
               ),
@@ -436,7 +432,7 @@ class _panierState extends State<panier> {
           ),
 
           SizedBox(
-            height: 2,
+            height: height10px(context) * 0.1,
           ),
           Row(
             children: [
@@ -445,25 +441,25 @@ class _panierState extends State<panier> {
                 child: Text(
                   'Montant Total : ',
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: fontSize10(context) * 1.4,
                     color: Colors.grey,
                   ),
                 ),
               ),
               SizedBox(
-                width: 160,
+                width: width10px(context) * 16,
               ),
               Text(
                 '1240 MRU',
                 style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: fontSize10(context) * 1.6,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
             ],
           ),
           SizedBox(
-            height: 5,
+            height: height10px(context) * 0.5,
           ),
           CustomButton(
             text: 'Acceder au paiement ',

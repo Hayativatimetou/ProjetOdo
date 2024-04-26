@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 import 'package:startup/features/Category/widgets/CustAppbar.dart';
 import 'package:startup/features/Panier/screens/tracking.dart';
 import 'package:startup/features/Panier/widgets/CustomButton.dart';
@@ -28,7 +29,7 @@ class _panState extends State<pan> {
             child: Text(
               'Adresse Livraison',
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: fontSize10(context) * 1.8,
                 color: Colors.black,
               ),
             ),
@@ -39,7 +40,7 @@ class _panState extends State<pan> {
               elevation: 3.0,
               child: Row(
                 children: [
-                  SizedBox(width: 20),
+                  SizedBox(width: width10px(context) * 2),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,33 +48,33 @@ class _panState extends State<pan> {
                         Row(
                           children: [
                             SizedBox(
-                              height: 5,
+                              height: height10px(context) * 0.5,
                             ),
                             Text(
                               'Nouakchott',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(
-                              width: 200,
+                              width: width10px(context) * 20,
                             ),
                             Text(
                               'Changer',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.blue,
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 40),
+                        SizedBox(height: height10px(context) * 4),
                         Text(
                           '27 Najah , Tvz',
                           style: TextStyle(
-                            fontSize: 14.0,
+                            fontSize: fontSize10(context) * 1.4,
                             color: Colors.black,
                           ),
                         ),
@@ -85,7 +86,7 @@ class _panState extends State<pan> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: height10px(context) * 2,
           ),
           Row(
             children: [
@@ -94,26 +95,26 @@ class _panState extends State<pan> {
                 child: Text(
                   'Payment',
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: fontSize10(context) * 1.4,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               SizedBox(
-                width: 220,
+                width: width10px(context) * 22,
               ),
               Text(
                 'Changer',
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: fontSize10(context) * 1.4,
                   color: Colors.blue,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 10,
+            height: height10px(context) * 1,
           ),
           Row(
             children: [
@@ -122,23 +123,23 @@ class _panState extends State<pan> {
               ),
               Image.asset(
                 'assets/images/img1.png',
-                width: 50,
-                height: 50,
+                width: width10px(context) * 5,
+                height: height10px(context) * 5,
               ),
               SizedBox(
-                width: 10,
+                width: width10px(context) * 1,
               ),
               Text(
                 '****3947',
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: fontSize10(context) * 1.4,
                   color: Colors.black,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 10,
+            height: height10px(context) * 1,
           ),
           Row(
             children: [
@@ -147,18 +148,18 @@ class _panState extends State<pan> {
                 child: Text(
                   'Commande:',
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: fontSize10(context) * 1.4,
                     color: Colors.grey,
                   ),
                 ),
               ),
               SizedBox(
-                width: 190,
+                width: width10px(context) * 19,
               ),
               Text(
                 '1120 MRU',
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: fontSize10(context) * 1.4,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -166,7 +167,7 @@ class _panState extends State<pan> {
             ],
           ),
           SizedBox(
-            height: 5,
+            height: height10px(context) * 0.5,
           ),
           Row(
             children: [
@@ -175,18 +176,18 @@ class _panState extends State<pan> {
                 child: Text(
                   'Livraison: ',
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: fontSize10(context) * 1.4,
                     color: Colors.grey,
                   ),
                 ),
               ),
               SizedBox(
-                width: 220,
+                width: width10px(context) * 22,
               ),
               Text(
                 '15 MRU',
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: fontSize10(context) * 1.4,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -194,7 +195,7 @@ class _panState extends State<pan> {
             ],
           ),
           SizedBox(
-            height: 5,
+            height: height10px(context) * 0.5,
           ),
           Row(
             children: [
@@ -203,18 +204,18 @@ class _panState extends State<pan> {
                 child: Text(
                   'Total:',
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: fontSize10(context) * 1.4,
                     color: Colors.grey,
                   ),
                 ),
               ),
               SizedBox(
-                width: 225,
+                width: width10px(context) * 22.5,
               ),
               Text(
                 '1270 MRU',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: fontSize10(context) * 1.6,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -222,7 +223,7 @@ class _panState extends State<pan> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: height10px(context) * 2,
           ),
           CustomButton(
             text: 'SOUMETTRE LA COMMANDE',
@@ -236,12 +237,12 @@ class _panState extends State<pan> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 5.0),
+                        SizedBox(height: height10px(context) * 0.5),
                         Container(
                           child: Center(
                             child: Container(
-                              width: 100,
-                              height: 4,
+                              width: width10px(context) * 10,
+                              height: height10px(context) * 0.4,
                               color: Colors.grey,
                             ),
                           ),
@@ -250,29 +251,31 @@ class _panState extends State<pan> {
                         Center(
                           child: Image.asset(
                             'assets/images/img2.png',
-                            width: 200,
-                            height: 200,
+                            width: width10px(context) * 20,
+                            height: height10px(context) * 20,
                           ),
                         ),
-                        SizedBox(height: 5.0),
+                        SizedBox(height: height10px(context) * 0.5),
                         Center(
                           child: Text(
                             "Commande est confirmer ",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                                fontSize: fontSize10(context) * 2),
                           ),
                         ),
-                        SizedBox(height: 5.0),
+                        SizedBox(height: height10px(context) * 0.5),
                         Center(
                           child: Text(
                             "Votre commande est confirmee,nous esperons etre livre  a temps et bon appetit ",
-                            style: TextStyle(color: Colors.grey, fontSize: 16),
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: fontSize10(context) * 1.6),
                           ),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: height10px(context) * 0.5,
                         ),
                         CustomButton(
                           text: 'Afficher le Tracker ',
@@ -286,13 +289,13 @@ class _panState extends State<pan> {
                           },
                         ),
                         SizedBox(
-                          height: 30,
+                          height: height10px(context) * 3,
                         ),
                         Container(
                           child: Center(
                             child: Container(
-                              width: 200,
-                              height: 4,
+                              width: width10px(context) * 20,
+                              height: height10px(context) * 0.4,
                               color: Colors.black,
                             ),
                           ),
@@ -306,13 +309,13 @@ class _panState extends State<pan> {
             },
           ),
           SizedBox(
-            height: 215,
+            height: height10px(context) * 21.5,
           ),
           Container(
             child: Center(
               child: Container(
-                width: 200,
-                height: 4,
+                width: width10px(context) * 20,
+                height: height10px(context) * 0.4,
                 color: Colors.black,
               ),
             ),

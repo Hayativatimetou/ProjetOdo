@@ -18,6 +18,10 @@ class produit extends StatefulWidget {
 }
 
 class _produitState extends State<produit> {
+  bool isAppleClicked = false;
+  bool isRecentClicked = false;
+  bool isClientClicked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,45 +92,120 @@ class _produitState extends State<produit> {
                                 ),
                               ),
                               SizedBox(height: height10px(context) * 3),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text('Apple Populaire',
-                                    style: TextStyle(
-                                        fontSize: fontSize10(context) * 1.4)),
-                              ),
-                              SizedBox(height: height10px(context) * 3),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text('Plus Récent',
-                                    style: TextStyle(
-                                        fontSize: fontSize10(context) * 1.4)),
-                              ),
-                              SizedBox(height: height10px(context) * 3),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text('Avis des Clients',
-                                    style: TextStyle(
-                                        fontSize: fontSize10(context) * 1.4)),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isAppleClicked = true;
+                                    isRecentClicked = false;
+                                    isClientClicked = false;
+                                  });
+                                },
+                                child: isAppleClicked
+                                    ? Container(
+                                        padding: EdgeInsets.all(8.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.blue,
+                                        ),
+                                        child: Text(
+                                          'Apple Populaire',
+                                          style: TextStyle(
+                                            fontSize: fontSize10(context) * 1.4,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      )
+                                    : Text(
+                                        'Apple Populaire',
+                                        style: TextStyle(
+                                          fontSize: fontSize10(context) * 1.4,
+                                          color: Colors.black,
+                                        ),
+                                      ),
                               ),
                               SizedBox(height: height10px(context) * 3),
                               GestureDetector(
-                                // onTap: () {
-                                //   Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //       builder: (context) => Details(),
-                                //     ),
-                                //   );
-                                // },
-                                child: Container(
-                                  color: Colors.blue,
-                                  padding: EdgeInsets.all(8.0),
-                                  margin: EdgeInsets.only(right: 8.0),
+                                onTap: () {
+                                  setState(() {
+                                    isAppleClicked = false;
+                                    isRecentClicked = true;
+                                    isClientClicked = false;
+                                  });
+                                },
+                                child: isRecentClicked
+                                    ? Container(
+                                        padding: EdgeInsets.all(8.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.blue,
+                                        ),
+                                        child: Text(
+                                          'Plus Récent',
+                                          style: TextStyle(
+                                            fontSize: fontSize10(context) * 1.4,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      )
+                                    : Text(
+                                        'Plus Récent',
+                                        style: TextStyle(
+                                          fontSize: fontSize10(context) * 1.4,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                              ),
+                              SizedBox(height: height10px(context) * 3),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isAppleClicked = false;
+                                    isRecentClicked = false;
+                                    isClientClicked = true;
+                                  });
+                                },
+                                child: isClientClicked
+                                    ? Container(
+                                        padding: EdgeInsets.all(8.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.blue,
+                                        ),
+                                        child: Text(
+                                          'Avis des Clients',
+                                          style: TextStyle(
+                                            fontSize: fontSize10(context) * 1.4,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      )
+                                    : Text(
+                                        'Avis des Clients',
+                                        style: TextStyle(
+                                          fontSize: fontSize10(context) * 1.4,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                              ),
+                              SizedBox(height: height10px(context) * 3),
+                              Container(
+                                child: ElevatedButton(
+                                  onPressed: () {},
                                   child: Text(
                                     'Prix: du plus bas au plus élevé',
                                     style: TextStyle(
-                                      fontSize: fontSize10(context) * 1.4,
+                                      fontSize: fontSize10(context) * 1.6,
                                       color: Colors.white,
+                                    ),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromARGB(255, 37, 156, 213),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
                                   ),
                                 ),
@@ -134,8 +213,10 @@ class _produitState extends State<produit> {
                               SizedBox(height: height10px(context) * 3),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
-                                child: Text('Prix: du plus élevé au plus bas',
-                                    style: TextStyle(fontSize: 14.0)),
+                                child: Text(
+                                  'Prix: du plus élevé au plus bas',
+                                  style: TextStyle(fontSize: 14.0),
+                                ),
                               ),
                               SizedBox(height: height10px(context) * 3),
                             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 import 'package:startup/features/Panier/widgets/CustAppbar.dart';
 import 'package:startup/features/Panier/widgets/CustomButton.dart';
@@ -25,10 +26,12 @@ class _reviewsState extends State<reviews> {
         children: [
           Text(
             ' 8 reviews',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: fontSize10(context) * 20),
           ),
           SizedBox(
-            height: 400,
+            height: height10px(context) * 40,
           ),
           CustomButton(
             text: 'SOUMETTRE LA COMMANDE',
@@ -42,12 +45,12 @@ class _reviewsState extends State<reviews> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 5.0),
+                        SizedBox(height: height10px(context) * 0.5),
                         Container(
                           child: Center(
                             child: Container(
-                              width: 100,
-                              height: 4,
+                              width: width10px(context) * 10,
+                              height: height10px(context) * 0.4,
                               color: Colors.black,
                             ),
                           ),
@@ -64,7 +67,7 @@ class _reviewsState extends State<reviews> {
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 SizedBox(
-                                  height: 30,
+                                  height: height10px(context) * 3,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -73,22 +76,22 @@ class _reviewsState extends State<reviews> {
                                       Icons.star,
                                       color: Colors.grey,
                                     ),
-                                    SizedBox(width: 5.0),
+                                    SizedBox(width: width10px(context) * 0.5),
                                     Icon(
                                       Icons.star,
                                       color: Colors.grey,
                                     ),
-                                    SizedBox(width: 5.0),
+                                    SizedBox(width: width10px(context) * 0.5),
                                     Icon(
                                       Icons.star,
                                       color: Colors.grey,
                                     ),
-                                    SizedBox(width: 5.0),
+                                    SizedBox(width: width10px(context) * 0.5),
                                     Icon(
                                       Icons.star,
                                       color: Colors.grey,
                                     ),
-                                    SizedBox(width: 5.0),
+                                    SizedBox(width: width10px(context) * 0.5),
                                     Icon(
                                       Icons.star,
                                       color: Colors.grey,
@@ -96,7 +99,7 @@ class _reviewsState extends State<reviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 10,
+                                  height: height10px(context) * 1,
                                 ),
                                 Text(
                                   'S\'il vous plaît, partagez votre avis sur le produit',

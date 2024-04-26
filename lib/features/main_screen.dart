@@ -3,6 +3,8 @@ import 'package:startup/features/Category/screens/categ.dart';
 import 'package:startup/features/Category/screens/categories.dart';
 
 import 'package:startup/features/Panier/screens/panier.dart';
+import 'package:startup/features/favorites/screens/favorite1.dart';
+import 'package:startup/features/profile/screens/userprofile.dart';
 
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({Key? key}) : super(key: key);
@@ -16,8 +18,9 @@ class _HomeScreenState extends State<MyHomeScreen> {
   List<Widget> screens = [
     const Categ(),
     const Categories(),
-    // const favorite(),
+    FavoriteScreen(),
     const panier(),
+    UserProfile(),
   ];
 
   @override
@@ -43,10 +46,10 @@ class _HomeScreenState extends State<MyHomeScreen> {
             icon: Icon(Icons.category),
             label: 'Categorie',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.favorite),
-          //   label: 'Favorite',
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_cart,
