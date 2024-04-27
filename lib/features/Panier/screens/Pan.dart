@@ -210,7 +210,8 @@ class _panState extends State<pan> {
           ),
           CustomButton(
             text: 'SOUMETTRE LA COMMANDE',
-            color: Colors.blue,
+            textColor: Colors.white,
+            backgroundColor: Colors.blue,
             onPressed: () {
               showModalBottomSheet(
                 context: context,
@@ -262,7 +263,8 @@ class _panState extends State<pan> {
                         ),
                         CustomButton(
                           text: 'Afficher le Tracker ',
-                          color: Colors.blue,
+                          textColor: Colors.white,
+                          backgroundColor: Colors.blue,
                           onPressed: () {
                             Navigator.push(
                               context,

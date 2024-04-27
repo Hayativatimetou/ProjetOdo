@@ -18,8 +18,8 @@ class _reviewsState extends State<reviews> {
       backgroundColor: Colors.grey.shade100,
       appBar: custAppbar(
         title: 'Rating and reviews',
-        chevronLeftCallback: () {},
-        searchCallback: () {},
+        //chevronLeftCallback: () {},
+        // searchCallback: () {},
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,8 @@ class _reviewsState extends State<reviews> {
           ),
           CustomButton(
             text: 'SOUMETTRE LA COMMANDE',
-            color: Colors.blue,
+            textColor: Colors.white,
+            backgroundColor: Colors.blue,
             onPressed: () {
               showModalBottomSheet(
                 context: context,
@@ -153,7 +154,8 @@ class _reviewsState extends State<reviews> {
                                 ),
                                 CustomButton(
                                   text: 'Envoyer mon avis',
-                                  color: Colors.blue,
+                                  textColor: Colors.white,
+                                  backgroundColor: Colors.blue,
                                   onPressed: () {
                                     showModalBottomSheet(
                                       context: context,
@@ -331,7 +333,9 @@ class _reviewsState extends State<reviews> {
                                                       CustomButton(
                                                         text:
                                                             'Envoyer mon avis',
-                                                        color: Colors.blue,
+                                                        textColor: Colors.white,
+                                                        backgroundColor:
+                                                            Colors.blue,
                                                         onPressed: () {},
                                                       ),
                                                       SizedBox(

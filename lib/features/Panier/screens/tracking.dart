@@ -353,7 +353,7 @@ class _TrackingState extends State<Tracking> {
                                                                 FontWeight.bold,
                                                             fontSize: fontSize10(
                                                                     context) *
-                                                                2,
+                                                                2.5,
                                                           ),
                                                         ),
                                                       ),
@@ -369,7 +369,7 @@ class _TrackingState extends State<Tracking> {
                                                                   Colors.grey,
                                                               fontSize: fontSize10(
                                                                       context) *
-                                                                  2),
+                                                                  1.6),
                                                         ),
                                                       ),
                                                       SizedBox(
@@ -378,7 +378,9 @@ class _TrackingState extends State<Tracking> {
                                                               0.5),
                                                       CustomButton(
                                                         text: 'Evaluations',
-                                                        color: Colors.blue,
+                                                        textColor: Colors.white,
+                                                        backgroundColor:
+                                                            Colors.blue,
                                                         onPressed: () {
                                                           Navigator.push(
                                                             context,
@@ -396,8 +398,11 @@ class _TrackingState extends State<Tracking> {
                                                       ),
                                                       CustomButton(
                                                         text: 'Plus Tard',
-                                                        color: Colors
-                                                            .grey.shade100,
+                                                        textColor:
+                                                            Color.fromRGBO(37,
+                                                                156, 213, 1),
+                                                        backgroundColor:
+                                                            Colors.white,
                                                         onPressed: () {},
                                                       ),
                                                     ],

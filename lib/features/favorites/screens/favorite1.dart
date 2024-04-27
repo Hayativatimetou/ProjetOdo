@@ -11,13 +11,13 @@ class FavoriteScreen extends StatelessWidget {
       // Define what should happen when an item is tapped
     }
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 242, 237, 237),
-      appBar: AppBar(
-        title: Text('Favorites'),
-      ),
+      backgroundColor: Color.fromARGB(255, 227, 223, 223),
+      appBar: AppBar(),
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
+          Text('Favoris',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -29,10 +29,7 @@ class FavoriteScreen extends StatelessWidget {
                   SizedBox(width: width10px(context) * 8),
                   Icon(Icons.compare_arrows),
                   SizedBox(width: width10px(context) * 0.3),
-                  Text(
-                    'Prix du plus bas au plus élevé',
-                    style: TextStyle(fontSize: fontSize10(context) * 1),
-                  ),
+                  Text('Prix du plus bas au plus élevé'),
                   SizedBox(width: width10px(context) * 0.5),
                   Icon(Icons.list),
                 ],

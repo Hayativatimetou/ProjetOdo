@@ -25,18 +25,48 @@ class _panierState extends State<panier> {
     super.dispose();
   }
 
-  int quantity = 1;
+  int quantity1 = 1;
+  int quantity2 = 1;
+  int quantity3 = 1;
 
-  void incrementQuantity() {
+  void incrementQuantity1() {
     setState(() {
-      quantity++;
+      quantity1++;
     });
   }
 
-  void decrementQuantity() {
+  void decrementQuantity1() {
     setState(() {
-      if (quantity > 1) {
-        quantity--;
+      if (quantity1 > 1) {
+        quantity1--;
+      }
+    });
+  }
+
+  void incrementQuantity2() {
+    setState(() {
+      quantity2++;
+    });
+  }
+
+  void decrementQuantity2() {
+    setState(() {
+      if (quantity2 > 1) {
+        quantity2--;
+      }
+    });
+  }
+
+  void incrementQuantity3() {
+    setState(() {
+      quantity3++;
+    });
+  }
+
+  void decrementQuantity3() {
+    setState(() {
+      if (quantity3 > 1) {
+        quantity3--;
       }
     });
   }
@@ -137,7 +167,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 8),
                             InkWell(
-                              onTap: decrementQuantity,
+                              onTap: decrementQuantity1,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -150,7 +180,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             Text(
-                              '$quantity',
+                              '$quantity1',
                               style: TextStyle(
                                 fontSize: fontSize10(context) * 1.2,
                                 fontWeight: FontWeight.bold,
@@ -158,7 +188,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             InkWell(
-                              onTap: incrementQuantity,
+                              onTap: incrementQuantity1,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -247,7 +277,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 8),
                             InkWell(
-                              onTap: decrementQuantity,
+                              onTap: decrementQuantity2,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -260,7 +290,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             Text(
-                              '$quantity',
+                              '$quantity2',
                               style: TextStyle(
                                 fontSize: fontSize10(context) * 1.2,
                                 fontWeight: FontWeight.bold,
@@ -268,7 +298,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             InkWell(
-                              onTap: incrementQuantity,
+                              onTap: incrementQuantity2,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -359,7 +389,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 8),
                             InkWell(
-                              onTap: decrementQuantity,
+                              onTap: decrementQuantity3,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -372,7 +402,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             Text(
-                              '$quantity',
+                              '$quantity3',
                               style: TextStyle(
                                 fontSize: fontSize10(context) * 1.2,
                                 fontWeight: FontWeight.bold,
@@ -380,7 +410,7 @@ class _panierState extends State<panier> {
                             ),
                             SizedBox(width: width10px(context) * 1),
                             InkWell(
-                              onTap: incrementQuantity,
+                              onTap: incrementQuantity3,
                               child: Container(
                                 width: width10px(context) * 3,
                                 height: width10px(context) * 3,
@@ -466,7 +496,8 @@ class _panierState extends State<panier> {
           ),
           CustomButton(
             text: 'Accéder au paiement',
-            color: Colors.blue,
+            textColor: Colors.white,
+            backgroundColor: Colors.blue,
             onPressed: () {
               Navigator.push(
                 context,

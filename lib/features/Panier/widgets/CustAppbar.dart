@@ -27,7 +27,11 @@ class custAppbar extends StatelessWidget implements PreferredSizeWidget {
               color: Colors.black,
               size: 30,
             ),
-            onPressed: chevronLeftCallback,
+            onPressed: () {
+              if (context != null) {
+                Navigator.of(context!).pop();
+              }
+            },
           ),
           SizedBox(width: width10px(context) * 0.8),
           title != null
