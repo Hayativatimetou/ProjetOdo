@@ -68,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: EdgeInsets.symmetric(horizontal: 4.0),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(4.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
               child: TextFormField(
                 decoration: InputDecoration(
@@ -121,11 +121,104 @@ class _SettingsPageState extends State<SettingsPage> {
                 SizedBox(
                     height: height10px(context) * 0.8,
                     width: width10px(context) * 15),
-                Text(
-                  'Changer',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14.0,
+                GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          padding: EdgeInsets.all(16.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    labelText: 'Ancien mot de passe',
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'Mot de passe oublié ?',
+                                style: TextStyle(
+                                    fontSize: 13.0, color: Colors.grey),
+                              ),
+                              SizedBox(
+                                height: height10px(context) * 2,
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Nouveau mot de passe',
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height10px(context) * 2,
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Confirmer le mot de passe',
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height10px(context) * 2,
+                              ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  // Gérer le clic sur le bouton Enregistrer
+                                  Navigator.of(context).pop();
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.blue),
+                                  padding: MaterialStateProperty.all(
+                                    EdgeInsets.symmetric(
+                                        vertical: 20.0, horizontal: 150.0),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Enregistrer',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        'Changer',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -137,110 +230,44 @@ class _SettingsPageState extends State<SettingsPage> {
               'Mot de passe:',
               style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
             ),
+            //   Container(
+            //         padding: EdgeInsets.symmetric(horizontal: 4.0),
+            //         decoration: BoxDecoration(
+            //           border: Border.all(color: Colors.grey),
+            //           borderRadius: BorderRadius.circular(8.0),
+            //         ),
+            //   child: TextFormField(
+            //     decoration: InputDecoration(
+            //       border: InputBorder.none,
+            //     ),
+            //   ),
+            // ),
             Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 4.0),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 255, 255, 255),
+                border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              child: GestureDetector(
-                onTap: () {
-                  // Show bottom sheet for changing password
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return Container(
-                        padding: EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: TextFormField(
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      labelText: 'Ancien mot de passe',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: TextFormField(
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      labelText: 'Nouveau mot de passe',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: TextFormField(
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      labelText:
-                                          'Confirmer le nouveau mot de passe',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: height10px(context) * 2,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle save button press
-                                Navigator.of(context).pop();
-                              },
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.blue),
-                              ),
-                              child: Text(
-                                'Enregistrer  ',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Smartmss',
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      // Add functionality for eye icon here
                     },
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Smartmss',
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        // Add functionality for eye icon here
-                      },
-                      icon: Icon(Icons.visibility), // Change to eye icon
-                      color: Colors.black,
-                    ),
-                  ],
-                ),
+                    icon: Icon(Icons.visibility), // Change to eye icon
+                    color: Colors.black,
+                  ),
+                ],
               ),
+//               ),
             ),
             SizedBox(
               height: height10px(context) * 2,

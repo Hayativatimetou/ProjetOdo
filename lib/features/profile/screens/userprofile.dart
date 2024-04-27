@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:startup/config.dart';
 
 import 'package:startup/features/profile/screens/commandes.dart';
-
 import 'package:startup/features/profile/screens/detailcommande.dart';
 import 'package:startup/features/profile/screens/parametres.dart';
 import 'package:startup/features/profile/widgets/columnwidget.dart';
@@ -20,7 +19,7 @@ class MyAppp extends StatelessWidget {
     return MaterialApp(
       title: 'User Profile',
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 203, 202, 202),
         body: UserProfile(),
       ),
     );
@@ -71,6 +70,9 @@ class ProfileContainer extends StatelessWidget {
                 style: TextStyle(fontSize: 16.0, color: Colors.grey),
               ),
             ],
+          ),
+          SizedBox(
+            height: height10px(context) * 7,
           ),
         ],
       ),
@@ -134,7 +136,7 @@ class ColumnContainer extends StatelessWidget {
           CircleIcon(
             icon: Icons.money_off_csred_sharp,
             title: 'Methodes de paiment',
-            subtitle: 'Bankily 33********',
+            subtitle: 'Bankily 33****',
             onTap: () {
               Navigator.push(
                 context,
@@ -209,7 +211,7 @@ class CircleIcon extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  size: 30.0,
+                  size: 22.0,
                   color: Color.fromARGB(
                       255, 171, 217, 255), // Set icon color to light blue
                 ),
@@ -221,11 +223,20 @@ class CircleIcon extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black // Add color to the title text
+                        // Add other text styles as needed
+                        ),
                   ),
-                  Text(subtitle),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey // Add color to the title text
+                        // Add other text styles as needed
+                        ),
+                  ),
                 ],
               ),
             ],

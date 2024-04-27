@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:startup/config.dart';
 
-import 'package:startup/features/profile/screens/cmdencours.dart';
 import 'package:startup/features/profile/screens/Cmdannule.dart';
 import 'package:startup/features/profile/screens/detailcommande.dart';
 
-class OrdersScreen extends StatefulWidget {
+import 'package:startup/features/profile/screens/commandes.dart';
+
+class CmdEnCoursScreen extends StatefulWidget {
   @override
-  _OrdersScreenState createState() => _OrdersScreenState();
+  _CmdEnCoursScreenState createState() => _CmdEnCoursScreenState();
 }
 
-class _OrdersScreenState extends State<OrdersScreen> {
+class _CmdEnCoursScreenState extends State<CmdEnCoursScreen> {
   List<Order> orders = [
     Order(
       orderNumber: '1234',
@@ -36,30 +37,22 @@ class _OrdersScreenState extends State<OrdersScreen> {
     var _selectedIndex = 0; // Initialize _selectedIndex with an initial value
 
     void _onItemTapped(int index) {
-      if (index == 1) {
-        // Navigate to the CmdEnCoursScreen when "En cours" is tapped
+      if (index == 0) {
+        // Naviguer vers l'écran cmdencours lorsque "En cours" est tapé
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CmdEnCoursScreen()),
+          MaterialPageRoute(builder: (context) => OrdersScreen()),
         );
       }
-
       if (index == 2) {
-        // Navigate to the CmdEnCoursScreen when "En cours" is tapped
+        // Naviguer vers l'écran cmdencours lorsque "En cours" est tapé
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => CmdannuleScreen()),
         );
       }
-
-      // if (index == 1) {
-      //   // Naviguer vers l'écran cmdencours lorsque "En cours" est tapé
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => CmdEnCoursScreen()),
-      //   );
-      // }
-    } // Define what should happen when an item is tapped
+      // Define what should happen when an item is tapped
+    }
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 249, 244, 244),
@@ -68,11 +61,27 @@ class _OrdersScreenState extends State<OrdersScreen> {
         bottom: PreferredSize(
           preferredSize:
               Size.fromHeight(30.0), // Ajustez la hauteur selon vos besoins
+
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      _onItemTapped(
+                          0); // Call _onItemTapped with the appropriate index
+                    },
+                    child: Text(
+                      'Livré',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors
+                            .black, // Add blue color for the "En cours" text
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 4.0), // Ajouter un padding vers le haut
@@ -90,7 +99,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             Colors.blue, // Use green color for delivered button
                       ),
                       child: Text(
-                        'Livré',
+                        'En cours',
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Colors.white,
@@ -110,21 +119,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   //   },
                   //   child: Text('En cours'),
                   // ),
-                  GestureDetector(
-                    onTap: () {
-                      _onItemTapped(
-                          1); // Call _onItemTapped with the appropriate index
-                    },
-                    child: Text(
-                      'En cours',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors
-                            .black, // Add blue color for the "En cours" text
-                      ),
-                    ),
-                  ),
 
                   GestureDetector(
                     onTap: () {
@@ -234,10 +228,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                    // primary: statusColor,
+                    //primary: statusColor,
                     ),
                 child: Text(
-                  'Livré',
+                  'En cours',
                   style: TextStyle(
                     color: Colors.white,
                     // Make the title bold

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:startup/config.dart';
 
-import 'package:startup/features/profile/screens/cmdencours.dart';
-import 'package:startup/features/profile/screens/Cmdannule.dart';
 import 'package:startup/features/profile/screens/detailcommande.dart';
+import 'package:startup/features/profile/screens/cmdencours.dart';
+import 'package:startup/features/profile/screens/commandes.dart';
 
-class OrdersScreen extends StatefulWidget {
+class CmdannuleScreen extends StatefulWidget {
   @override
-  _OrdersScreenState createState() => _OrdersScreenState();
+  _CmdannuleScreenState createState() => _CmdannuleScreenState();
 }
 
-class _OrdersScreenState extends State<OrdersScreen> {
+class _CmdannuleScreenState extends State<CmdannuleScreen> {
   List<Order> orders = [
     Order(
       orderNumber: '1234',
@@ -44,22 +44,14 @@ class _OrdersScreenState extends State<OrdersScreen> {
         );
       }
 
-      if (index == 2) {
+      if (index == 0) {
         // Navigate to the CmdEnCoursScreen when "En cours" is tapped
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CmdannuleScreen()),
+          MaterialPageRoute(builder: (context) => OrdersScreen()),
         );
-      }
-
-      // if (index == 1) {
-      //   // Naviguer vers l'écran cmdencours lorsque "En cours" est tapé
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => CmdEnCoursScreen()),
-      //   );
-      // }
-    } // Define what should happen when an item is tapped
+      } // Define what should happen when an item is tapped
+    }
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 249, 244, 244),
@@ -68,11 +60,42 @@ class _OrdersScreenState extends State<OrdersScreen> {
         bottom: PreferredSize(
           preferredSize:
               Size.fromHeight(30.0), // Ajustez la hauteur selon vos besoins
+
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      _onItemTapped(
+                          0); // Call _onItemTapped with the appropriate index
+                    },
+                    child: Text(
+                      'Livré',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors
+                            .black, // Add blue color for the "En cours" text
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _onItemTapped(
+                          1); // Call _onItemTapped with the appropriate index
+                    },
+                    child: Text(
+                      'En cours',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors
+                            .black, // Add blue color for the "En cours" text
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 4.0), // Ajouter un padding vers le haut
@@ -90,7 +113,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             Colors.blue, // Use green color for delivered button
                       ),
                       child: Text(
-                        'Livré',
+                        'Annule',
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Colors.white,
@@ -110,37 +133,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   //   },
                   //   child: Text('En cours'),
                   // ),
-                  GestureDetector(
-                    onTap: () {
-                      _onItemTapped(
-                          1); // Call _onItemTapped with the appropriate index
-                    },
-                    child: Text(
-                      'En cours',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors
-                            .black, // Add blue color for the "En cours" text
-                      ),
-                    ),
-                  ),
 
-                  GestureDetector(
-                    onTap: () {
-                      _onItemTapped(
-                          2); // Call _onItemTapped with the appropriate index
-                    },
-                    child: Text(
-                      'Annule',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors
-                            .black, // Add blue color for the "En cours" text
-                      ),
-                    ),
-                  ),
                   // ElevatedButton(
                   //   onPressed: () {
                   //     // Handle cancel button tap
@@ -237,7 +230,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                     // primary: statusColor,
                     ),
                 child: Text(
-                  'Livré',
+                  'Annule',
                   style: TextStyle(
                     color: Colors.white,
                     // Make the title bold
