@@ -25,63 +25,46 @@ class _panState extends State<pan> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              'Adresse Livraison',
-              style: TextStyle(
-                fontSize: fontSize10(context) * 1.8,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
               elevation: 3.0,
-              child: Row(
-                children: [
-                  SizedBox(width: width10px(context) * 2),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            SizedBox(
-                              height: height10px(context) * 0.5,
-                            ),
-                            Text(
-                              'Nouakchott',
-                              style: TextStyle(
-                                fontSize: fontSize10(context) * 1.4,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(
-                              width: width10px(context) * 20,
-                            ),
-                            Text(
-                              'Changer',
-                              style: TextStyle(
-                                fontSize: fontSize10(context) * 1.4,
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: height10px(context) * 4),
                         Text(
-                          '27 Najah , Tvz',
+                          'Nouakchott',
                           style: TextStyle(
                             fontSize: fontSize10(context) * 1.4,
                             color: Colors.black,
                           ),
                         ),
+                        Text(
+                          'Changer',
+                          style: TextStyle(
+                            fontSize: fontSize10(context) * 1.4,
+                            color: Colors.blue,
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: height10px(context) * 1),
+                    Text(
+                      '27 Najah , Tvz',
+                      style: TextStyle(
+                        fontSize: fontSize10(context) * 1.4,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      height: height10px(context) * 6,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
@@ -102,7 +85,7 @@ class _panState extends State<pan> {
                 ),
               ),
               SizedBox(
-                width: width10px(context) * 22,
+                width: width10px(context) * 24,
               ),
               Text(
                 'Changer',
@@ -123,8 +106,8 @@ class _panState extends State<pan> {
               ),
               Image.asset(
                 'assets/images/img1.png',
-                width: width10px(context) * 5,
-                height: height10px(context) * 5,
+                width: width10px(context) * 4,
+                height: height10px(context) * 4,
               ),
               SizedBox(
                 width: width10px(context) * 1,
@@ -154,7 +137,7 @@ class _panState extends State<pan> {
                 ),
               ),
               SizedBox(
-                width: width10px(context) * 19,
+                width: width10px(context) * 21,
               ),
               Text(
                 '1120 MRU',
@@ -182,7 +165,7 @@ class _panState extends State<pan> {
                 ),
               ),
               SizedBox(
-                width: width10px(context) * 22,
+                width: width10px(context) * 23.5,
               ),
               Text(
                 '15 MRU',
@@ -210,7 +193,7 @@ class _panState extends State<pan> {
                 ),
               ),
               SizedBox(
-                width: width10px(context) * 22.5,
+                width: width10px(context) * 24,
               ),
               Text(
                 '1270 MRU',
@@ -262,7 +245,7 @@ class _panState extends State<pan> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
-                                fontSize: fontSize10(context) * 2),
+                                fontSize: fontSize10(context) * 2.5),
                           ),
                         ),
                         SizedBox(height: height10px(context) * 0.5),
@@ -275,7 +258,7 @@ class _panState extends State<pan> {
                           ),
                         ),
                         SizedBox(
-                          height: height10px(context) * 0.5,
+                          height: height10px(context) * 1.5,
                         ),
                         CustomButton(
                           text: 'Afficher le Tracker ',
@@ -287,19 +270,7 @@ class _panState extends State<pan> {
                                   builder: (context) => Tracking()),
                             );
                           },
-                        ),
-                        SizedBox(
-                          height: height10px(context) * 3,
-                        ),
-                        Container(
-                          child: Center(
-                            child: Container(
-                              width: width10px(context) * 20,
-                              height: height10px(context) * 0.4,
-                              color: Colors.black,
-                            ),
-                          ),
-                          margin: EdgeInsets.only(bottom: 16.0),
+                          width: MediaQuery.of(context).size.width * 0.9,
                         ),
                       ],
                     ),
@@ -307,19 +278,7 @@ class _panState extends State<pan> {
                 },
               );
             },
-          ),
-          SizedBox(
-            height: height10px(context) * 21.5,
-          ),
-          Container(
-            child: Center(
-              child: Container(
-                width: width10px(context) * 20,
-                height: height10px(context) * 0.4,
-                color: Colors.black,
-              ),
-            ),
-            margin: EdgeInsets.only(bottom: 16.0),
+            width: MediaQuery.of(context).size.width * 0.9,
           ),
         ],
       ),

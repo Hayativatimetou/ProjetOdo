@@ -19,7 +19,7 @@ class _HomeScreenState extends State<MyHomeScreen> {
     const Categ(),
     const Categories(),
     FavoriteScreen(),
-    const panier(),
+    panier(),
     UserProfile(),
   ];
 

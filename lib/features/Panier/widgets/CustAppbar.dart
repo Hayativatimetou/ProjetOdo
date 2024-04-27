@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/config.dart';
 
 class custAppbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? chevronLeftCallback;
@@ -28,7 +29,7 @@ class custAppbar extends StatelessWidget implements PreferredSizeWidget {
             ),
             onPressed: chevronLeftCallback,
           ),
-          SizedBox(width: 8),
+          SizedBox(width: width10px(context) * 0.8),
           title != null
               ? Text(
                   title!,

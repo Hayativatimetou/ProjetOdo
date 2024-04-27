@@ -27,8 +27,7 @@ class _reviewsState extends State<reviews> {
           Text(
             ' 8 reviews',
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: fontSize10(context) * 20),
+                fontWeight: FontWeight.bold, fontSize: fontSize10(context) * 2),
           ),
           SizedBox(
             height: height10px(context) * 40,
@@ -116,7 +115,8 @@ class _reviewsState extends State<reviews> {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
-                                          SizedBox(width: 20),
+                                          SizedBox(
+                                              width: width10px(context) * 2),
                                           Expanded(
                                             child: Column(
                                               crossAxisAlignment:
@@ -127,12 +127,16 @@ class _reviewsState extends State<reviews> {
                                                     Text(
                                                       'votre avis',
                                                       style: TextStyle(
-                                                        fontSize: 14.0,
+                                                        fontSize: fontSize10(
+                                                                context) *
+                                                            1.4,
                                                         color: Colors.grey,
                                                       ),
                                                     ),
                                                     SizedBox(
-                                                      height: 150,
+                                                      height:
+                                                          height10px(context) *
+                                                              15,
                                                     ),
                                                   ],
                                                 ),
@@ -145,7 +149,7 @@ class _reviewsState extends State<reviews> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 5,
+                                  height: height10px(context) * 0.5,
                                 ),
                                 CustomButton(
                                   text: 'Envoyer mon avis',
@@ -160,12 +164,17 @@ class _reviewsState extends State<reviews> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              SizedBox(height: 5.0),
+                                              SizedBox(
+                                                  height: height10px(context) *
+                                                      0.5),
                                               Container(
                                                 child: Center(
                                                   child: Container(
-                                                    width: 100,
-                                                    height: 4,
+                                                    width:
+                                                        width10px(context) * 10,
+                                                    height:
+                                                        height10px(context) *
+                                                            0.4,
                                                     color: Colors.black,
                                                   ),
                                                 ),
@@ -189,7 +198,9 @@ class _reviewsState extends State<reviews> {
                                                                 Colors.black),
                                                       ),
                                                       SizedBox(
-                                                        height: 30,
+                                                        height: height10px(
+                                                                context) *
+                                                            3,
                                                       ),
                                                       Row(
                                                         mainAxisAlignment:
@@ -199,27 +210,55 @@ class _reviewsState extends State<reviews> {
                                                           Icon(
                                                             Icons.star,
                                                             color:
-                                                                Colors.yellow,
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    235,
+                                                                    182,
+                                                                    91),
                                                           ),
-                                                          SizedBox(width: 5.0),
+                                                          SizedBox(
+                                                              width: width10px(
+                                                                      context) *
+                                                                  0.5),
                                                           Icon(
                                                             Icons.star,
                                                             color:
-                                                                Colors.yellow,
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    235,
+                                                                    182,
+                                                                    91),
                                                           ),
-                                                          SizedBox(width: 5.0),
+                                                          SizedBox(
+                                                              width: width10px(
+                                                                      context) *
+                                                                  0.5),
                                                           Icon(
                                                             Icons.star,
                                                             color:
-                                                                Colors.yellow,
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    235,
+                                                                    182,
+                                                                    91),
                                                           ),
-                                                          SizedBox(width: 5.0),
+                                                          SizedBox(
+                                                              width: width10px(
+                                                                      context) *
+                                                                  0.5),
                                                           Icon(
                                                             Icons.star,
                                                             color:
-                                                                Colors.yellow,
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    235,
+                                                                    182,
+                                                                    91),
                                                           ),
-                                                          SizedBox(width: 5.0),
+                                                          SizedBox(
+                                                              width: width10px(
+                                                                      context) *
+                                                                  0.5),
                                                           Icon(
                                                             Icons.star,
                                                             color: Colors.grey,
@@ -227,7 +266,9 @@ class _reviewsState extends State<reviews> {
                                                         ],
                                                       ),
                                                       SizedBox(
-                                                        height: 10,
+                                                        height: height10px(
+                                                                context) *
+                                                            1,
                                                       ),
                                                       Text(
                                                         'S\'il vous plaît, partagez votre avis sur le produit',
@@ -250,7 +291,9 @@ class _reviewsState extends State<reviews> {
                                                             child: Row(
                                                               children: [
                                                                 SizedBox(
-                                                                    width: 20),
+                                                                    width: width10px(
+                                                                            context) *
+                                                                        2),
                                                                 Expanded(
                                                                   child: Column(
                                                                     crossAxisAlignment:
@@ -262,14 +305,15 @@ class _reviewsState extends State<reviews> {
                                                                         style:
                                                                             TextStyle(
                                                                           fontSize:
-                                                                              14.0,
+                                                                              fontSize10(context) * 1.4,
                                                                           color:
                                                                               Colors.grey,
                                                                         ),
                                                                       ),
                                                                       SizedBox(
                                                                         height:
-                                                                            80,
+                                                                            height10px(context) *
+                                                                                8,
                                                                       ),
                                                                     ],
                                                                   ),
@@ -280,7 +324,9 @@ class _reviewsState extends State<reviews> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 20,
+                                                        height: height10px(
+                                                                context) *
+                                                            2,
                                                       ),
                                                       CustomButton(
                                                         text:
@@ -289,18 +335,9 @@ class _reviewsState extends State<reviews> {
                                                         onPressed: () {},
                                                       ),
                                                       SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                      Container(
-                                                        child: Center(
-                                                          child: Container(
-                                                            width: 200,
-                                                            height: 4,
-                                                            color: Colors.black,
-                                                          ),
-                                                        ),
-                                                        margin: EdgeInsets.only(
-                                                            bottom: 16.0),
+                                                        height: height10px(
+                                                                context) *
+                                                            1.5,
                                                       ),
                                                     ],
                                                   ),
@@ -314,17 +351,7 @@ class _reviewsState extends State<reviews> {
                                   },
                                 ),
                                 SizedBox(
-                                  height: 20,
-                                ),
-                                Container(
-                                  child: Center(
-                                    child: Container(
-                                      width: 200,
-                                      height: 4,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  margin: EdgeInsets.only(bottom: 16.0),
+                                  height: height10px(context) * 2,
                                 ),
                               ],
                             ),
@@ -336,6 +363,7 @@ class _reviewsState extends State<reviews> {
                 },
               );
             },
+            width: MediaQuery.of(context).size.width * 0.9,
           ),
         ],
       ),

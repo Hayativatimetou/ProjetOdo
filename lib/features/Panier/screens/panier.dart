@@ -437,17 +437,20 @@ class _panierState extends State<panier> {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  'Montant Total : ',
-                  style: TextStyle(
-                    fontSize: fontSize10(context) * 1.4,
-                    color: Colors.grey,
+                padding: const EdgeInsets.all(4.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    'Montant Total : ',
+                    style: TextStyle(
+                      fontSize: fontSize10(context) * 1.4,
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
               ),
               SizedBox(
-                width: width10px(context) * 16,
+                width: width10px(context) * 17,
               ),
               Text(
                 '1240 MRU',
@@ -462,7 +465,7 @@ class _panierState extends State<panier> {
             height: height10px(context) * 0.5,
           ),
           CustomButton(
-            text: 'Acceder au paiement ',
+            text: 'Accéder au paiement',
             color: Colors.blue,
             onPressed: () {
               Navigator.push(
@@ -470,7 +473,8 @@ class _panierState extends State<panier> {
                 MaterialPageRoute(builder: (context) => pan()),
               );
             },
-          ),
+            width: MediaQuery.of(context).size.width * 0.9,
+          )
         ],
       ),
     );

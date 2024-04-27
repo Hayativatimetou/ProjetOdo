@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:startup/config.dart';
 import 'package:startup/features/Panier/screens/Reviews.dart';
 import 'package:startup/features/Panier/widgets/CustomButton.dart';
 
@@ -34,7 +35,7 @@ class _TrackingState extends State<Tracking> {
       context: context,
       builder: (BuildContext context) {
         return SizedBox(
-          height: 1000,
+          height: height10px(context) * 100,
           child: Container(
             padding: EdgeInsets.all(2.0),
             child: Column(
@@ -42,15 +43,15 @@ class _TrackingState extends State<Tracking> {
               children: [
                 Center(
                   child: Container(
-                    width: 100,
-                    height: 4,
+                    width: width10px(context) * 10,
+                    height: height10px(context) * 0.4,
                     color: Colors.grey,
                   ),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
-                    width: 150,
+                    width: width10px(context) * 15,
                     margin: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -63,7 +64,7 @@ class _TrackingState extends State<Tracking> {
                           child: Text(
                             '#33-A45E',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: fontSize10(context) * 1.6,
                               color: Colors.white,
                             ),
                           ),
@@ -83,13 +84,13 @@ class _TrackingState extends State<Tracking> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: height10px(context) * 1,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      SizedBox(width: 20),
+                      SizedBox(width: width10px(context) * 2),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,46 +100,46 @@ class _TrackingState extends State<Tracking> {
                                 Text(
                                   'temps restant',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.black,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 20,
+                                  width: width10px(context) * 2,
                                 ),
                                 Container(
-                                  height: 30,
-                                  width: 4,
+                                  height: height10px(context) * 3,
+                                  width: width10px(context) * 0.4,
                                   color: Colors.grey,
                                 ),
                                 SizedBox(
-                                  width: 100,
+                                  width: width10px(context) * 10,
                                 ),
                                 Text(
                                   'temps estime',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            SizedBox(height: height10px(context) * 0.5),
                             Row(
                               children: [
                                 Text(
                                   '2 mins',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.grey,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 170,
+                                  width: width10px(context) * 17,
                                 ),
                                 Text(
                                   '35 mins',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.grey,
                                   ),
                                 ),
@@ -150,12 +151,12 @@ class _TrackingState extends State<Tracking> {
                     ],
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: height10px(context) * 0.5),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      SizedBox(width: 20),
+                      SizedBox(width: width10px(context) * 2),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,8 +164,8 @@ class _TrackingState extends State<Tracking> {
                             Row(
                               children: [
                                 Container(
-                                  height: 2,
-                                  width: 300,
+                                  height: height10px(context) * 0.2,
+                                  width: width10px(context) * 30,
                                   color: Colors.grey,
                                 ),
                               ],
@@ -176,13 +177,13 @@ class _TrackingState extends State<Tracking> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: height10px(context) * 1,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      SizedBox(width: 20),
+                      SizedBox(width: width10px(context) * 2),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,52 +191,54 @@ class _TrackingState extends State<Tracking> {
                             Row(
                               children: [
                                 SizedBox(
-                                  height: 5,
+                                  height: height10px(context) * 0.5,
                                 ),
                                 Text(
                                   'From',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.grey,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 150,
+                                  width: width10px(context) * 15,
                                 ),
                                 Text(
                                   'To',
                                   style: TextStyle(
-                                      fontSize: 14.0, color: Colors.grey),
+                                      fontSize: fontSize10(context) * 1.4,
+                                      color: Colors.grey),
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: height10px(context) * 1),
                             Row(
                               children: [
                                 Text(
                                   'Placio restaurant',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.black,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 50,
+                                  width: width10px(context) * 5,
                                 ),
                                 Text(
                                   '123 rue mokthar ',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: fontSize10(context) * 1.4,
                                     color: Colors.black,
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 5,
+                                  height: height10px(context) * 0.5,
                                 ),
                                 Text(
                                   'dadah,Tvz',
                                   style: TextStyle(
-                                      fontSize: 14.0, color: Colors.black),
+                                      fontSize: fontSize10(context) * 1.4,
+                                      color: Colors.black),
                                 )
                               ],
                             )
@@ -246,46 +249,46 @@ class _TrackingState extends State<Tracking> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: height10px(context) * 0.5,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      SizedBox(width: 50),
+                      SizedBox(width: width10px(context) * 5),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 5),
+                            SizedBox(height: height10px(context) * 0.5),
                             Text(
                               'Driver details',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: fontSize10(context) * 1.4,
                                 color: Colors.black,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            SizedBox(height: height10px(context) * 0.5),
                             Row(
                               children: [
                                 Image.asset(
                                   'assets/images/tst3.png',
-                                  width: 50,
-                                  height: 50,
+                                  width: width10px(context) * 5,
+                                  height: height10px(context) * 5,
                                 ),
-                                SizedBox(width: 10),
+                                SizedBox(width: width10px(context) * 1),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('Sidi Doe'),
-                                    SizedBox(height: 5),
+                                    SizedBox(height: height10px(context) * 0.5),
                                     Text('ID: 101D12345'),
                                   ],
                                 ),
                               ],
                             ),
                             SizedBox(
-                              height: 3,
+                              height: height10px(context) * 0.3,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -293,7 +296,7 @@ class _TrackingState extends State<Tracking> {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Container(
-                                    width: 150,
+                                    width: width10px(context) * 15,
                                     margin: EdgeInsets.all(16.0),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(30),
@@ -318,8 +321,12 @@ class _TrackingState extends State<Tracking> {
                                                       Container(
                                                         child: Center(
                                                           child: Container(
-                                                            width: 100,
-                                                            height: 4,
+                                                            width: width10px(
+                                                                    context) *
+                                                                10,
+                                                            height: height10px(
+                                                                    context) *
+                                                                0.4,
                                                             color: Colors.grey,
                                                           ),
                                                         ),
@@ -329,8 +336,12 @@ class _TrackingState extends State<Tracking> {
                                                       Center(
                                                         child: Image.asset(
                                                           'assets/images/image10.png',
-                                                          width: 200,
-                                                          height: 200,
+                                                          width: width10px(
+                                                                  context) *
+                                                              20,
+                                                          height: height10px(
+                                                                  context) *
+                                                              20,
                                                         ),
                                                       ),
                                                       Center(
@@ -340,21 +351,31 @@ class _TrackingState extends State<Tracking> {
                                                             color: Colors.black,
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            fontSize: 20,
+                                                            fontSize: fontSize10(
+                                                                    context) *
+                                                                2,
                                                           ),
                                                         ),
                                                       ),
-                                                      SizedBox(height: 5.0),
+                                                      SizedBox(
+                                                          height: height10px(
+                                                                  context) *
+                                                              1.5),
                                                       Center(
                                                         child: Text(
                                                           "Votre commande est confirmée, nous espérons être livrés à temps et bon appétit.",
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.grey,
-                                                              fontSize: 16),
+                                                              fontSize: fontSize10(
+                                                                      context) *
+                                                                  2),
                                                         ),
                                                       ),
-                                                      SizedBox(height: 5),
+                                                      SizedBox(
+                                                          height: height10px(
+                                                                  context) *
+                                                              0.5),
                                                       CustomButton(
                                                         text: 'Evaluations',
                                                         color: Colors.blue,
@@ -369,11 +390,14 @@ class _TrackingState extends State<Tracking> {
                                                         },
                                                       ),
                                                       SizedBox(
-                                                        height: 5,
+                                                        height: height10px(
+                                                                context) *
+                                                            0.5,
                                                       ),
                                                       CustomButton(
                                                         text: 'Plus Tard',
-                                                        color: Colors.grey,
+                                                        color: Colors
+                                                            .grey.shade100,
                                                         onPressed: () {},
                                                       ),
                                                     ],
@@ -388,11 +412,14 @@ class _TrackingState extends State<Tracking> {
                                             children: [
                                               Icon(Icons.phone,
                                                   color: Colors.white),
-                                              SizedBox(width: 5),
+                                              SizedBox(
+                                                  width:
+                                                      width10px(context) * 0.5),
                                               Text(
                                                 'Appeler',
                                                 style: TextStyle(
-                                                  fontSize: 16,
+                                                  fontSize:
+                                                      fontSize10(context) * 1.6,
                                                   color: Colors.white,
                                                 ),
                                               ),
@@ -413,11 +440,12 @@ class _TrackingState extends State<Tracking> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 5),
+                                        SizedBox(
+                                            width: width10px(context) * 0.5),
                                         Text(
                                           'Message',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: fontSize10(context) * 1.6,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -515,7 +543,7 @@ class _TrackingState extends State<Tracking> {
                 _showModalBottomSheet(context);
               },
               child: Container(
-                height: 50,
+                height: height10px(context) * 5,
                 color: Colors.transparent,
               ),
             ),

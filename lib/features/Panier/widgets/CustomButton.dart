@@ -19,10 +19,6 @@ class CustomButton extends StatelessWidget {
     return Center(
       child: Container(
         width: width,
-        // decoration: BoxDecoration(
-        //   borderRadius: BorderRadius.circular(50),
-        //   color: color,
-        // ),
         child: ElevatedButton(
           onPressed: onPressed,
           child: Text(
